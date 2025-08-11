@@ -1,0 +1,412 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Kanit', sans-serif;
+  color: #333;
+  background-image: url('images/bg.png'); /* ใช้รูปภาพ bg.png เป็นพื้นหลัง */
+  background-size: cover; /* ปรับขนาดพื้นหลังให้ครอบเต็มหน้าจอ */
+  background-position: center; /* จัดตำแหน่งพื้นหลังให้กลาง */
+  animation: fadeIn 2s ease-out;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Container */
+.container {
+  width: 90%; /* ลดความกว้างลงเป็น 90% */
+  max-width: 1200px; /* กำหนดความกว้างสูงสุด */
+  margin: 40px auto;
+  background-color: rgba(255, 255, 255, 0.9); /* ทำให้พื้นหลังขาวโปร่งแสง */
+  border-radius: 25px;
+  box-shadow: 0px 10px 30px rgba(47, 41, 41, 0.1);
+  padding: 40px;
+  transition: transform 0.5s ease;
+}
+
+/* Header */
+.header {
+  background-color: #FFB3C6; /* สีชมพูพาสเทล */
+  padding: 60px 40px; /* เพิ่ม padding ด้านข้าง */
+  text-align: center;
+  border-radius: 30px;
+  box-shadow: 0px 10px 20px rgba(225, 188, 188, 0.1);
+  margin-bottom: 80px; /* ลดระยะห่างด้านล่าง */
+  position: relative;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  padding-left: 0;
+  margin-top: 100px;
+  background-image: linear-gradient(45deg, #FFB3C6, #FFF6A2); /* Gradient */
+  animation: headerFadeIn 3s ease-out; /* เพิ่มแอนิเมชั่น fade-in */
+}
+
+/* Header Fade In Animation */
+@keyframes headerFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Profile Image */
+.profile-img {
+  width: 200px; /* ลดขนาดรูปลง */
+  height: 270px; /* ลดขนาดรูปลง */
+  border-radius: 100%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 6px solid #B3E5FF; /* ขอบฟ้าพาสเทล */
+  position: absolute;
+  top: -120px; /* ขยับรูปลงให้มีระยะห่าง */
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for Profile Image */
+.profile-img:hover {
+  transform: translateX(-50%) scale(1.1); /* ขยายขนาดรูปเมื่อ hover */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Portfolio Text */
+.portfolio-text {
+  font-size: 5em; /* เพิ่มขนาดตัวอักษรให้ใหญ่ขึ้น */
+  color: #7bc4ec; /* ฟ้าราสเทล */
+  font-weight: bold; /* ตัวหนา */
+  position: absolute;
+  top: -150px; /* ขยับขึ้นจากตำแหน่งเดิม */
+  left: 20px; /* ตำแหน่งจากขอบซ้าย */
+  transform: translateY(0); /* ให้ข้อความอยู่ในตำแหน่งที่กำหนด */
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6); /* เพิ่มเงาให้ตัวหนังสือ */
+  font-family: 'Kanit', sans-serif; /* ฟอนต์หนา */
+  animation: slideInLeft 1s ease-out; /* เพิ่มแอนิเมชั่นการเลื่อนจากซ้าย */
+}
+
+/* Slide In Animation for Portfolio */
+@keyframes slideInLeft {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+/* Heading */
+h1 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+  margin-top: 200px; /* เพิ่มระยะห่างจากรูป */
+}
+
+/* Subheading */
+.subheading {
+  font-size: 1.2em;
+  color: #777;
+  margin-top: 10px;
+  font-weight: 300;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+/* Hover Effect Subheading */
+.subheading:hover {
+  color: #FFB3C6; /* เปลี่ยนเป็นชมพูพาสเทลเมื่อ hover */
+}
+
+/* Section */
+section {
+  margin-bottom: 40px; /* เพิ่มระยะห่างระหว่าง section */
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.1);
+  margin-top: 30px; /* เพิ่มระยะห่างด้านบน */
+  transition: transform 0.5s ease;
+}
+
+section:hover {
+  transform: scale(1.02); /* เพิ่มขนาดเมื่อ hover */
+}
+
+/* Section Titles */
+h2 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: left;
+  border-bottom: 2px solid #B3E5FF; /* ฟ้าพาสเทล */
+  padding-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+}
+
+/* List Style */
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  margin-bottom: 15px;
+  font-size: 1.2em;
+  padding-left: 20px;
+  position: relative;
+}
+
+ul li:before {
+  
+  position: absolute;
+  left: 0;
+  color: #B3E5FF; /* ฟ้าพาสเทล */
+}
+
+/* Strong text */
+strong {
+  color: #333;
+}
+
+/* Contact Section */
+.contact p {
+  font-size: 1.2em;
+  padding-left: 20px;
+  border-left: 3px solid #B3E5FF; /* ฟ้าพาสเทล */
+  margin-top: 10px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background-color: #FFB3C6; /* สีชมพูพาสเทล */
+  padding: 20px;
+  margin-top: 50px;
+  border-radius: 30px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  font-size: 1.3em;
+  color: #555;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* Button */
+button {
+  background-color: #FFF6A2; /* เหลืองนุ่ม */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+}
+
+/* Button Hover Effect */
+button:hover {
+  background-color: #e5b1be; /* สีชมพูพาสเทล */
+  transform: translateY(-5px); /* ปุ่มยกขึ้นเมื่อ hover */
+}
+/* การศึกษา */
+.education ul {
+  list-style-type: none;
+}
+
+.education ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+.education ul li .circle-logo {
+  width: 60px; /* ขนาดของวงกลม */
+  height: 60px;
+  border-radius: 50%; /* ทำให้รูปเป็นวงกลม */
+  overflow: hidden; /* ซ่อนส่วนเกิน */
+  margin-right: 20px; /* เพิ่มระยะห่างระหว่างรูปและข้อความ */
+}
+
+.education ul li .circle-logo img {
+  width: 100%; /* ให้รูปเต็มพื้นที่วงกลม */
+  height: 100%;
+  object-fit: cover; /* ครอบรูปให้พอดี */
+}
+
+/* ปรับสไตล์ของการศึกษาด้วย */
+.education h2 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: left;
+  border-bottom: 2px solid #B3E5FF; /* ฟ้าพาสเทล */
+  padding-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+}
+/* รางวัลและผลงาน */
+.awards {
+  margin-bottom: 50px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.awards h2 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: left;
+  border-bottom: 2px solid #B3E5FF; /* ฟ้าพาสเทล */
+  padding-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-top: 20px;
+}/* Carousel */
+.carousel {
+  width: 100%;
+  overflow: hidden; /* ซ่อนรูปภาพที่อยู่นอกเหนือจากการแสดงผล */
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* เพิ่มการเลื่อนอย่างนุ่มนวล */
+}
+
+.carousel-item {
+  display: flex;
+  justify-content: space-between; /* จัดรูปภาพให้มีระยะห่างที่เหมาะสม */
+  width: 100%; /* ความกว้างของแต่ละกลุ่มรูปภาพ */
+  gap: 20px; /* เพิ่มระยะห่างระหว่างรูปภาพ */
+}
+
+.carousel-images {
+  display: flex;
+  gap: 20px; /* เพิ่มระยะห่างระหว่างรูปภาพ */
+  width: 100%; /* ความกว้างเต็มที่ */
+  justify-content: space-between; /* จัดรูปภาพให้มีระยะห่าง */
+}
+
+.carousel-images img {
+  width: 32%; /* ทำให้แต่ละรูปมีขนาดเป็น 1/3 ของพื้นที่ */
+  height: 32%; /* ทำให้สูงเท่ากับความกว้างเพื่อให้เป็นสี่เหลี่ยม */
+  border-radius: 10px;
+  object-fit: cover; /* ครอบรูปให้พอดี */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กับรูปภาพ */
+}
+
+/* เพิ่มระยะห่างระหว่างรูปและคำอธิบาย */
+.carousel-description {
+  width: 30%; /* กำหนดขนาดพื้นที่สำหรับคำอธิบาย */
+  font-size: 1.1em;
+  color: #777;
+  padding-left: 20px;
+}
+
+/* ปรับขนาดการแสดงผลบนหน้าจอเล็ก */
+@media (max-width: 768px) {
+  .carousel-item {
+    flex-direction: column; /* จัดให้รูปและคำอธิบายอยู่ในแนวตั้ง */
+    align-items: center;
+  }
+
+  .carousel-images {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .carousel-images img {
+    width: 80%; /* ขยายให้รูปใหญ่ขึ้นบนหน้าจอเล็ก */
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .carousel-description {
+    width: 100%;
+    padding-left: 0;
+    margin-top: 20px;
+  }
+}
+
+/* ปุ่มเลื่อน */
+.carousel-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.carousel-buttons button {
+  background-color: #FFF6A2; /* เหลืองนุ่ม */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-buttons button:hover {
+  background-color: #e5b1be; /* สีชมพูพาสเทล */
+  transform: translateY(-5px); /* ปุ่มยกขึ้นเมื่อ hover */
+}
+
+
+
+
+/* Navbar */
+.navbar {
+  background-color: #f7c8d8; /* สีชมพูพาสเทลอ่อน */
+  padding: 15px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้เมนู */
+  border-bottom: 2px solid #FFB3C6; /* เส้นขอบฟ้าพาสเทล */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ปรับสไตล์ให้กับรายการในเมนู */
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.navbar ul li {
+  margin: 0 20px; /* เพิ่มระยะห่างระหว่างเมนู */
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #3e3e3e; /* สีข้อความเป็นสีเทาเข้ม */
+  font-size: 1.3em;
+  font-weight: 500;
+  text-transform: uppercase; /* ตัวอักษรพิมพ์ใหญ่ทั้งหมด */
+  letter-spacing: 2px; /* การเพิ่มระยะห่างระหว่างตัวอักษร */
+  transition: color 0.3s, transform 0.3s ease, box-shadow 0.3s ease; /* เพิ่มการเปลี่ยนสีและเงา */
+  padding: 6px 0;
+  position: relative;
+}
+
+/* ทำให้เมนูมีเอฟเฟกต์ hover */
+.navbar ul li a:hover {
+  color: #FFB3C6; /* สีชมพูอ่อนเมื่อ hover */
+  transform: scale(1.1); /* ขยายขนาดเมื่อ hover */
+  background-color: #FFF6A2; /* สีเหลืองนุ่มเมื่อ hover */
+  border-radius: 5px;
+  box-shadow: 0 5px 20px rgba(255, 99, 99, 0.2); /* เพิ่มเงาให้ตอน hover */
+  transition: box-shadow 0.3s ease;
+}
