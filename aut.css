@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: visible;
+    user-select: none;
+}
+
+/* Header & Navigation */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    /* box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1); */
+}
+
+.navbar.scrolled {
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.navbar.black {
+    background: #10101f;
+    backdrop-filter: blur(20px);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease-in-out;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-container a {
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar.black .nav-container .nav-menu a {
+    color: #FFF6A2;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+nav a.highlight {
+    /* Base styles for the button */
+    margin-top: 1.5rem;
+    padding: 0.8em 1.5em;
+    background-color: #FFF6A2;
+    border: none;
+    color: #10101f;
+    border-radius: 1000px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    overflow: hidden;
+    /* This is important to contain the pseudo-element */
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 0;
+}
+
+.navbar.black .nav-container .nav-menu a.highlight {
+    color: #10101f;
+}
+
+nav a.highlight:after {
+    /* The pseudo-element for the gradient effect */
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 1000px;
+    background-image: linear-gradient(to right, #FFB3C6, #B3E5FF);
+    /* transition: width 0.5s ease, height 0.5s ease; */
+    z-index: -1;
+}
+
+nav a.highlight:hover:after {
+    /* State when hovering over the button */
+    width: 50%;
+    height: 50%;
+    /* Adjusting height for a smoother effect */
+}
+
+nav a.highlight:hover {
+    /* Hover effects for the button itself */
+    box-shadow: 0 0 40px rgba(255, 179, 198, 0.7), 0 0 40px rgba(179, 229, 255, 0.7);
+    transform: translateY(-3px);
+    /* Lifts the button slightly */
+    z-index: 1;
+}
+
+.hero {
+    background: white no-repeat center center/cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    /* เพิ่มระยะห่างด้านล่างของโมเดล */
+}
+
+.hero-content model-viewer {
+    width: 30vw;
+    height: 30vh;
+    border: none;
+}
+
+.container {
+    display: flex;
+    /* กำหนดให้เป็น Flexbox */
+    flex-direction: column;
+    /* จัดเรียงองค์ประกอบในแนวตั้ง */
+    justify-content: center;
+    /* จัดให้อยู่ตรงกลางตามแนวแกนหลัก (แนวตั้ง) */
+    align-items: center;
+    /* จัดให้อยู่ตรงกลางตามแนวแกนรอง (แนวนอน) */
+    height: 100vh;
+    /* กำหนดความสูงให้เต็มหน้าจอ */
+}
+
+.hero-text {
+    text-align: center;
+    margin-top: 20px;
+    /* เพิ่มระยะห่างด้านบนของข้อความ */
+}
+
+.hero-text h1 {
+    /*font-size: 2.5rem;*/
+    color: #333;
+}
+
+.hero-text p {
+    font-size: 0.8rem;
+    color: #666;
+    max-width: 600px;
+    /* จำกัดความกว้างของข้อความ */
+    margin: 20px auto;
+    /* จัดให้อยู่ตรงกลาง */
+}
+
+.about {
+    background: white no-repeat center center/cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: stretch;
+    /* ให้ items ขยายเต็มความสูงของ container */
+    justify-content: flex-start;
+    /* จัดเรียง items จากทางซ้าย */
+}
+
+.about-contect {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    /* ใช้ Flexbox เพื่อจัดเรียงเนื้อหา */
+    align-items: center;
+    /* จัดให้อยู่ตรงกลางตามแนวแกนหลัก (แนวตั้ง) */
+}
+
+#about-model {
+    width: 100%;
+    /* ให้โมเดลขยายเต็มพื้นที่ */
+    height: 100vh;
+    /* กำหนดความสูงให้เต็มหน้าจอ */
+    object-fit: contain;
+    /* ให้โมเดลไม่ถูกตัด */
+    position: absolute;
+    /* ทำให้โมเดลอยู่ด้านหลังเนื้อหา */
+    left: -50%;
+    /* เลื่อนโมเดลไปทางซ้าย */
+}
+
+.about-info {
+    margin-left: auto;
+    width: 75%;
+    padding: 40px;
+    padding-top: 90px;
+    box-sizing: border-box;
+    display: flex;
+    /* ทำให้เนื้อหาเป็น Flex container */
+    flex-direction: row;
+    /* จัดเรียงเป็นแนวนอน */
+    justify-content: space-around;
+    /* จัดเรียงเนื้อหาให้มีช่องไฟเท่าๆ กัน */
+    margin-top: 5rem;
+    gap: 1rem;
+}
+
+.about-info img {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.86);
+}
+
+.about-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-info li:first-of-type {
+    margin-bottom: 20px;
+}
+
+.Page {
+    font-size: 2rem;
+}
+
+.experience {
+    position: relative;
+    /* ให้ z-index ใช้งานได้ */
+    z-index: 10;
+    /* ลอยอยู่เหนือ section อื่น */
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.8);
+    background: #10101f no-repeat center center/cover;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF6A2;
+    /* เปลี่ยนสีข้อความให้เข้ากับธีม */
+}
+
+.experience-content {
+    max-width: 1200px;
+    font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .about {
+        flex-direction: column;
+        /* เปลี่ยนเป็นแนวตั้ง */
+        align-items: center;
+        /* จัดให้อยู่ตรงกลาง */
+    }
+
+    .about-contect {
+        display: none;
+    }
+
+    #about-model {
+        display: none;
+    }
+
+    .about-info {
+        width: 90%;
+        /* กำหนดความกว้างให้เหมาะสม */
+        padding: 20px;
+        /* ลด padding */
+        flex-direction: column;
+        /* จัดเรียงเป็นแนวตั้ง */
+        align-items: center;
+    }
+}
