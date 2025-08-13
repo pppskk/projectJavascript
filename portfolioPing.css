@@ -4,96 +4,6 @@
     box-sizing: border-box;
 }
 
-.navbar {
-  background-color: #2196F3;
-  padding: 0.8rem 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.nav-wrapper {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.logo h1 {
-  margin: 0;
-  color: #fff;
-  font-weight: 700;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.5rem;
-}
-
-.nav-link {
-  color: white;
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-  text-decoration: none;
-  font-size: 1.1rem;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.nav-link:hover {
-  background-color: #1565C0;
-  color: #fff;
-}
-
-
-body {
-    font-family: 'Poppins', sans-serif;
-    color: #333;
-    line-height: 1.6;
-}
-
-.wrapper {
-    margin: 20px 250px 20px 250px;
-    padding: 20px;
-    border-radius: 15px;
-    background: #e3f2fd;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-
-.header {
-    color: #555;;
-    text-align: center;
-    padding: 3rem 1rem;
-}
-
-.profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 4px solid #fff;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.about-content{
-    margin-top: 1rem;
-    font-size: 1.1rem;
-    color: #555;
-}
-.job-title {
-    font-weight: 500;
-    font-size: 1.2rem;
-}
-.tagline {
-    font-style: italic;
-    margin-top: 0.5rem;
-}
-
-.education {
-    color: #555;
-    margin-top: 2rem;
-}
-
 section {
     padding: 2rem;
     max-width: 900px;
@@ -107,22 +17,189 @@ h2 {
     padding-left: 10px;
 }
 
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.wrapper {
+    margin: 120px 250px 20px 250px;
+    padding: 20px;
+    border-radius: 15px;
+    background: #e3f2fd;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    color: #555;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.container {
+    padding: 20px 20px 30px 140px;
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    border: 5px solid #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+.group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.about {
+    padding: 5rem 3rem;
+    border-left: 3px solid #464444;
+    padding: 50px 80px 50px 100px;
+}
+
+.about-content {
+    margin-left: 1rem;
+    font-size: 1.1rem;
+}
+
+.education ul {
+    list-style: none;
+    padding: 0;
+}
+
+.education-item {
+    background: white;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.education-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.school-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: white;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.education-details h3 {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-size: 1.2em;
+}
+
+.education-details p {
+    margin: 0;
+    color: #666;
+    font-style:  'Poppins', sans-serif;
+}
+
+@media (max-width: 600px) {
+    .education-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .school-logo {
+        width: 50px;
+        height: 50px;
+    }
+}
+
 .skill-list {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
 }
+
 .skill-item {
     color: #555;
     background: #fff;
     border-radius: 10px;
     padding: 0.8rem 1.2rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     gap: 0.5rem;
     transition: transform 0.3s ease;
 }
+
 .skill-item:hover {
     transform: scale(1.05);
 }
@@ -132,21 +209,25 @@ h2 {
     display: grid;
     gap: 1.5rem;
 }
+
 .project-card {
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
+
 .project-card:hover {
     transform: translateY(-5px);
 }
+
 .project-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
+
 .project-info {
     padding: 1rem;
 }
@@ -167,7 +248,7 @@ h2 {
     background: #fff;
     border-radius: 15px;
     padding: 1.5rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -175,7 +256,7 @@ h2 {
 
 .activity-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .activity-card::before {
@@ -185,13 +266,13 @@ h2 {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, #FFB3C6, #2196F3);
+    background: linear-gradient(90deg,  #FFB3C6 0%, #B3E5FF 50%, #FFF6A2 100%);
 }
 
 .activity-image {
     width: 100%;
     height: 180px;
-    background: linear-gradient(135deg, #FFB3C6 0%, #FFC1E3 100%);
+    background: linear-gradient(135deg,  #FFB3C6 0%, #B3E5FF 50%, #FFF6A2 100%);
     border-radius: 10px;
     margin-bottom: 1rem;
     display: flex;
@@ -199,7 +280,7 @@ h2 {
     justify-content: center;
     font-size: 3rem;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
 }
@@ -211,7 +292,7 @@ h2 {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s ease;
 }
 
@@ -272,7 +353,7 @@ h2 {
     .activity-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .activity-image {
         height: 150px;
         font-size: 2.5rem;
@@ -291,7 +372,7 @@ h2 {
 }
 
 .contact-links a {
-    display: block; 
+    display: block;
     font-size: 1.2rem;
     color: #2196F3;
     margin: 0.8rem 0;
@@ -307,5 +388,5 @@ h2 {
 
 .contact-links a:hover {
     color: #1565C0;
-    transform: translateX(5px); 
+    transform: translateX(5px);
 }

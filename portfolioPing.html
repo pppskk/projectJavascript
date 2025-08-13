@@ -5,65 +5,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Warissara</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="portfolioPing.css">
 </head>
 
 <body>
     <nav class="navbar">
-        <div class="nav-wrapper">
-            <div class="logo">
-                <h1>LUMINA AI</h1>
-            </div>
-            <div>
-                <a href="#about" class="nav-link">About Me</a>
-                <a href="#education" class="nav-link">Education</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
+        <div class="nav-container">
+            <div class="logo"><a href="main.html">Lumina AI ✨</a></div>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About Me</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
     <div class="wrapper">
-        <header class="header">
-            <div class="container">
-                <img src="image1.jpg" alt="Profile Photo" class="profile-img">
-                <h1>Warissara Aromdee</h1>
-                <p class="job-title">UX/UI Designer</p>
-            </div>
-        </header>
+        <div class="group">
+            <header class="header">
+                <div class="container">
+                    <img src="images/image1.jpg" alt="Profile Photo" class="profile-img">
+                    <h1>Warissara Aromdee</h1>
+                    <h3 class="job-title">UX/UI Designer</h3>
+                </div>
+            </header>
 
-        <section id="about" class="about">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <p> Firstname : Warissara </p>
-                <p> Lastname : Aromdee </p>
-                <p> Nickname : Ping </p>
-                <p> Age : 19 </p>
-                <p> Birthday : 14 November 2548 </p>
-                <p> University : Chiangmai University </p>
-            </div>
-        </section>
+            <section id="about" class="about">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <p> Firstname : Warissara </p>
+                    <p> Lastname : Aromdee </p>
+                    <p> Nickname : Ping </p>
+                    <p> Age : 19 </p>
+                    <p> Birthday : 14 November 2548 </p>
+                    <p> University : Chiangmai University </p>
+                    <p> Faculty : College of Arts Media and Technology </p>
+                    <p> Major : Digital Industry Integration </p>
+                </div>
+            </section>
+        </div>
 
         <section id="education" class="education">
             <h2>Education</h2>
             <ul>
-                <li>
-                    <h3>Lower secondary education (2018-2021)</h3>
+                <li class="education-item">
+                    <div class="education-header">
+                        <img src="images/schoolLogo1.webp" alt="Chiangrai PAO School Logo" class="school-logo">
+                        <div class="education-details">
+                            <h3>Lower secondary education (2018-2021)</h3>
+                            <p>Chiangrai Provincial Administrative Organization School</p>
+                        </div>
+                    </div>
                 </li>
-                <p>chiangrai provincial administrative organization school</p><br />
-                <li>
-                    <h3>Upper secondary education (2021-2024)</h3>
+
+                <li class="education-item">
+                    <div class="education-header">
+                        <img src="images/schoolLogo1.webp" alt="Chiangrai PAO School Logo" class="school-logo">
+                        <div class="education-details">
+                            <h3>Upper secondary education (2021-2024)</h3>
+                            <p>Chiangrai Provincial Administrative Organization School</p>
+                        </div>
+                    </div>
                 </li>
-                <p>Chiangrai provincial administrative organization school</p><br />
-                <li>
-                    <h3>University (2024–Present)</h3>
+
+                <li class="education-item">
+                    <div class="education-header">
+                        <img src="images/uviversLogo.jpg" alt="Chiang Mai University Logo" class="school-logo">
+                        <div class="education-details">
+                            <h3>University (2024–Present)</h3>
+                            <p>College of Arts Media and Technology, Chiang Mai University
+                            </p>
+                        </div>
+                    </div>
                 </li>
-                <p>College of Arts Media and Technology, Digital Industry Integration, Chiangmai University</p>
             </ul>
         </section>
 
@@ -109,132 +126,127 @@
                         Object-Oriented Programming principles.</p>
                 </div>
             </div>
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Banking system</h3>
+                    <p>Designed and developed a transaction system that enables users to perform financial operations through the bank quickly and securely.</p>
+                </div>
+            </div>
         </section>
 
         <section id="activity" class="activity">
-    <h2>Activity</h2>
-    <div class="activity-grid">
-        <!-- กิจกรรม 1 -->
-        <div class="activity-card">
-            <div class="activity-image">
-                🎓
-            </div>
-            <h3 class="activity-title">Academic Competition</h3>
-            <div class="activity-date">
-                <i class="fas fa-calendar-alt"></i>
-                March 2024
-            </div>
-            <p class="activity-description">
-                เข้าร่วมการแข่งขันออกแบบเว็บไซต์ระดับมหาวิทยาลัย ได้รับรางวัลชมเชยจากการออกแบบ UI/UX ที่โดดเด่นและใช้งานได้จริง
-            </p>
-            <div class="activity-tags">
-                <span class="activity-tag">Web Design</span>
-                <span class="activity-tag">UI/UX</span>
-                <span class="activity-tag">Competition</span>
-            </div>
-        </div>
+            <h2>Activity</h2>
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="images/activity3.png" alt="Activity1" class="activity-img">
+                    </div>
+                    <h3 class="activity-title">CIRA CORE (Hackathon)</h3>
+                    <div class="activity-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        25-26 Faebruary 2023
+                    </div>
+                    <p class="activity-description">
+                        Participated in a competition to develop a Line Bot AI for inspecting vegetable quality using CIRA CORE.
+                    </p>
+                    <div class="activity-tags">
+                        <span class="activity-tag">Hackathon</span>
+                        <span class="activity-tag">Machine Learning </span>
+                    </div>
+                </div>
 
-        <!-- กิจกรรม 2 -->
-        <div class="activity-card">
-            <div class="activity-image">
-                🤝
-            </div>
-            <h3 class="activity-title">Community Volunteer</h3>
-            <div class="activity-date">
-                <i class="fas fa-calendar-alt"></i>
-                January 2024 - Present
-            </div>
-            <p class="activity-description">
-                อาสาสมัครสอนคอมพิวเตอร์พื้นฐานและการใช้เทคโนโลยีดิจิทัลให้กับผู้สูงอายุและเยาวชนในชุมชนเชียงราย
-            </p>
-            <div class="activity-tags">
-                <span class="activity-tag">Volunteer</span>
-                <span class="activity-tag">Teaching</span>
-                <span class="activity-tag">Community</span>
-            </div>
-        </div>
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="images/activity2.png" alt="Activity2" class="activity-img">
+                    </div>
+                    <h3 class="activity-title">Alot ESP32 KMITL</h3>
+                    <div class="activity-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        3-7 April 2023
+                    </div>
+                    <p class="activity-description">
+                        Attended an online training on creating innovations with Alot ESP32, KMITL.
+                    </p>
+                    <div class="activity-tags">
+                        <span class="activity-tag">Coding</span>
+                        <span class="activity-tag">IOT </span>
+                        <span class="activity-tag">Workshop</span>
+                    </div>
+                </div>
 
-        <!-- กิจกรรม 3 -->
-        <div class="activity-card">
-            <div class="activity-image">
-                💻
-            </div>
-            <h3 class="activity-title">Coding Workshop</h3>
-            <div class="activity-date">
-                <i class="fas fa-calendar-alt"></i>
-                February 2024
-            </div>
-            <p class="activity-description">
-                เข้าร่วม Workshop การเขียนโปรแกรมเว็บแอปพลิเคชันขั้นสูง เรียนรู้เทคโนโลยีใหม่ๆ และการทำงานเป็นทีม
-            </p>
-            <div class="activity-tags">
-                <span class="activity-tag">Coding</span>
-                <span class="activity-tag">Workshop</span>
-                <span class="activity-tag">Learning</span>
-            </div>
-        </div>
+                <div class="activity-card">
+                    <div class="activity-image">
+                        💻
+                    </div>
+                    <h3 class="activity-title">"Tapaap Bin" Automatic Water Dispenser</h3>
+                    <div class="activity-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        20 June 2022
+                    </div>
+                    <p class="activity-description">
+                        A new innovation, the “Tapaap Bin” automatic water dispenser, developed through collaboration among classmates.
+                    </p>
+                    <div class="activity-tags">
+                        <span class="activity-tag">Innovation</span>
+                        <span class="activity-tag">Event</span>
+                    </div>
+                </div>
 
-        <!-- กิจกรรม 4 -->
-        <div class="activity-card">
-            <div class="activity-image">
-                🎨
-            </div>
-            <h3 class="activity-title">Design Thinking Camp</h3>
-            <div class="activity-date">
-                <i class="fas fa-calendar-alt"></i>
-                December 2023
-            </div>
-            <p class="activity-description">
-                เข้าร่วมค่าย Design Thinking เพื่อพัฒนาทักษะการคิดเชิงออกแบบและการแก้ปัญหาอย่างสร้างสรรค์
-            </p>
-            <div class="activity-tags">
-                <span class="activity-tag">Design Thinking</span>
-                <span class="activity-tag">Creative</span>
-                <span class="activity-tag">Problem Solving</span>
-            </div>
-        </div>
+                <div class="activity-card">
+                    <div class="activity-image">
+                        🎨
+                    </div>
+                    <h3 class="activity-title">Battle CRPAO Robot Challenge</h3>
+                    <div class="activity-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        24 August 2023
+                    </div>
+                    <p class="activity-description">
+                        Technology booth staff at CRPAO SCIENCE DAY 2023, responsible for demonstrating and explaining the operation of the remote-controlled robot to interested visitors.
+                    </p>
+                    <div class="activity-tags">
+                        <span class="activity-tag">Technology</span>
+                        <span class="activity-tag">Robot</span>
+                    </div>
+                </div>
 
-        <!-- กิจกรรม 5 -->
-        <div class="activity-card">
-            <div class="activity-image">
-                🏆
-            </div>
-            <h3 class="activity-title">Hackathon CMU 2024</h3>
-            <div class="activity-date">
-                <i class="fas fa-calendar-alt"></i>
-                April 2024
-            </div>
-            <p class="activity-description">
-                เข้าร่วม Hackathon ระยะเวลา 48 ชั่วโมง ที่มหาวิทยาลัยเชียงใหม่ พัฒนาแอปพลิเคชันเพื่อช่วยเหลือเกษตรกร
-            </p>
-            <div class="activity-tags">
-                <span class="activity-tag">Hackathon</span>
-                <span class="activity-tag">App Development</span>
-                <span class="activity-tag">Agriculture Tech</span>
-            </div>
-        </div>
+                <div class="activity-card">
+                    <div class="activity-image">
+                        🏆
+                    </div>
+                    <h3 class="activity-title">CAMT Open House 2024</h3>
+                    <div class="activity-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        27-28 August 2024
+                    </div>
+                    <p class="activity-description">
+                        Convincing staff guiding visitors to the event venue and providing introductions to the various departments.
+                    </p>
+                    <div class="activity-tags">
+                        <span class="activity-tag">Open House</span>
+                        <span class="activity-tag">Event</span>
+                    </div>
+                </div>
 
-        <!-- กิจกรรม 6 -->
-        <div class="activity-card">
-            <div class="activity-image">
-                📚
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="images/activity1.jpg" alt="Activity6" class="activity-img">
+                    </div>
+                    <h3 class="activity-title">"Jakkim Nam" Automatic Water Dispenser</h3>
+                    <div class="activity-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        14 July 2023
+                    </div>
+                    <p class="activity-description">
+                        A new innovation, the automatic water dispenser "Jakkim Nam", developed from the "Tapaap Bin" dispenser to enhance its efficiency.
+                    </p>
+                    <div class="activity-tags">
+                        <span class="activity-tag">Innovation</span>
+                        <span class="activity-tag">Event</span>
+                    </div>
+                </div>
             </div>
-            <h3 class="activity-title">Tech Mentor Program</h3>
-            <div class="activity-date">
-                <i class="fas fa-calendar-alt"></i>
-                May 2024 - August 2024
-            </div>
-            <p class="activity-description">
-                เป็น Mentor ให้กับนักเรียนมัธยมศึกษาที่สนใจด้านเทคโนโลยี แนะนำการเขียนโปรแกรมและการออกแบบ
-            </p>
-            <div class="activity-tags">
-                <span class="activity-tag">Mentor</span>
-                <span class="activity-tag">Programming</span>
-                <span class="activity-tag">Youth Development</span>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
         <section id="contact" class="contact">
             <h2>Contact</h2>
