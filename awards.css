@@ -1,0 +1,96 @@
+/* =========================================================
+   Awards Page (awards.html)
+   ========================================================= */
+
+/* เพิ่มคุณสมบัติการเลื่อนสำหรับหน้าเว็บทั้งหมด */
+html, body {
+    height: 100%;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kanit', sans-serif;
+    background-color: #f0f0f0; /* เปลี่ยนสีพื้นหลัง */
+    color: #0a0101; /* เปลี่ยนสีข้อความ */ 
+}
+
+.awards-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh; /* Changed to min-height for full page view */
+    padding: 60px 10px; /* ลด padding ด้านบนและด้านข้าง */
+    animation: fadeIn 1.5s forwards;
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px; /* ลด gap ระหว่างการ์ด */
+    max-width: 900px; /* ลดความกว้างสูงสุดของ grid */
+    width: 100%;
+}
+
+@media (max-width: 992px) {
+    .awards-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .awards-grid {
+        grid-template-columns: 1fr; /* 1 column for mobile phones */
+        gap: 10px; /* ลด gap สำหรับมือถือ */
+    }
+}
+
+.award-card {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    border-radius: 10px; /* ลด border-radius */
+    padding: 15px; /* ลด padding ภายในการ์ด */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #FFB3C6;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.award-card:hover {
+    transform: translateY(-3px) rotate(1deg); /* ลดการเคลื่อนไหวให้ดูพอดีขึ้น */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.award-ribbon {
+    position: absolute;
+    top: 8px; /* ปรับตำแหน่งริบบิ้น */
+    left: -12px; /* ปรับตำแหน่งริบบิ้น */
+    background: #FFF6A2;
+    color: #FF69B4;
+    font-weight: 600;
+    padding: 2px 10px; /* ลด padding ริบบิ้น */
+    transform: rotate(-25deg);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    font-size: 0.7em; /* ลดขนาดตัวอักษร */
+}
+
+.award-image {
+    width: 100%;
+    max-height: 100px; /* ลดขนาดรูปภาพ */
+    object-fit: contain;
+    margin-bottom: 10px; /* ลด margin */
+}
+
+.award-card h3 {
+    color: #FF69B4;
+    font-size: 1em; /* ลดขนาดตัวอักษรหัวข้อ */
+    margin-bottom: 5px;
+}
+
+.award-card p {
+    color: #6C6C6C;
+    font-size: 0.75em; /* ลดขนาดตัวอักษรเนื้อหา */
+    line-height: 1.3;
+ }

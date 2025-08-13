@@ -1,105 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - หน้าหลัก</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav class="navbar">
-  <ul>
-    <li><a href="#personal-info">Personal Info</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#awards">Awards & Achievements</a></li>
-    <li><a href="#contact">Contact Info</a></li>
-  </ul>
-</nav>
-<div class="container">
-  <header class="header">
-    <div class="profile">
-      <img src="images/profile.jpg" alt="Profile" class="profile-img">
-      <h1>Anmanya Kongmee</h1>
-      <p class="subheading">Dedicated to utilizing my knowledge and experience in digital marketing to develop strategies and manage campaigns that drive results and build a well-recognized brand.</p>
-      
-      <!-- Added Portfolio text -->
-      <div class="portfolio-text">Portfolio</div>
+
+    <div class="background-container">
+        <!-- แก้ไข Nav Links ให้เชื่อมโยงไปหน้าต่างๆ -->
+        <nav class="navbar">
+            <div class="logo"><a href="main.html">LUMINA AI</a></div>
+            <ul class="nav-links">
+                <li><a href="personal.html">PERSONAL</a></li>
+                <li><a href="education.html">EDUCATION</a></li>
+                <li><a href="skills.html">SKILLS</a></li>
+                <li><a href="awards.html">AWARDS & ACHIEVEMENTS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <div class="main-content">
+            <div class="text-section">
+                <h1>Hi ! I'm Anmanya Kongmee -</h1>
+                <div class="pill">Front-End</div>
+                <p>Dedicated to utilizing my knowledge and experience in digital marketing to develop strategies and manage campaigns that drive results and build a well-recognized brand.</p>
+                <!-- แก้ไขปุ่มให้ไปหน้า Personal -->
+                <a href="personal.html" class="next-button">Next</a>
+            </div>
+            <div class="image-section">
+                <div class="image-frame">
+                    <div class="image-frame-header">
+                        <div class="traffic-lights">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="title-bar">Untitled</div>
+                        <div class="menu-bar">
+                            <span>File</span>
+                            <span>Edit</span>
+                            <span>View</span>
+                            <span>Help</span>
+                        </div>
+                    </div>
+                    <div class="image-frame-content">
+                        <div class="toolbar">
+                            <span class="tool-icon"></span>
+                            <span class="tool-icon"></span>
+                            <span class="tool-icon"></span>
+                            <span class="tool-icon"></span>
+                            <span class="tool-icon"></span>
+                        </div>
+                        <div class="image-area">
+                            <div class="genius-tag">Genius</div>
+                            <img src="images/profile.jpg" alt="Anmanya Kongmee" class="profile-photo">
+                        </div>
+                        <div class="bottom-tools">
+                            <div class="color-picker"></div>
+                            <div class="palette">
+                                <div class="palette-box"></div>
+                                <div class="palette-box"></div>
+                                <div class="palette-box"></div>
+                                <div class="palette-box"></div>
+                                <div class="palette-box"></div>
+                                <div class="palette-box"></div>
+                                <div class="palette-box"></div>
+                                <div class="palette-box"></div>
+                                <div class="palette-box"></div>
+                                <div class="palette-box"></div>
+                                <div class="palette-box"></div>
+                                <div class="palette-box"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- เพิ่ม Background Elements (ถ้ามี) -->
     </div>
-  </header>
-
-  <!-- Other sections... -->
-</div>
-
-   <section id="personal-info" class="details">
-  <h2>Personal Information</h2>
-  <div class="info">
-    <p><strong>Birthdate:</strong> April 9, 2006</p>
-    <p><strong>Age:</strong> 19 years</p>
-    <p><strong>Nationality:</strong> Thai</p>
-    <p><strong>Marital Status:</strong> Single</p>
-    <p><strong>Languages:</strong> English (Advanced), Thai (Native)</p>
-    <p><strong>Weight:</strong> 49 kg <strong>Height:</strong> 155 cm</p>
-  </div>
-</section>
-
-<section id="education" class="education">
-  <h2>Education</h2>
-  <ul>
-    <li>
-      <div class="circle-logo">
-        <img src="images/หสว.png" alt="Logo 2552">
-      </div>
-      <strong>Primary:</strong> Hadseaw Witthaya School
-    </li>
-    <li>
-      <div class="circle-logo">
-        <img src="images/มทส.png" alt="Logo 2013">
-      </div>
-      <strong>Secondary:</strong> Sathit Phibunsongkhram School
-    </li>
-    <li>
-      <div class="circle-logo">
-        <img src="images/มช.png" alt="Logo 2017">
-      </div>
-      <strong>University:</strong> Chiang Mai University
-    </li>
-  </ul>
-</section>
-
-<section id="skills" class="skills">
-  <h2>Skills</h2>
-  <ul>
-    <li>Digital Marketing Strategy and Planning</li>
-    <li>Campaign Management</li>
-    <li>Online Marketing Development</li>
-  </ul>
-</section>
-
-<section id="awards" class="awards">
-  <h2>Awards & Achievements</h2>
-  <!-- Content here -->
-</section>
-
-<!-- Carousel Buttons -->
-<div class="carousel-buttons">
-  <button class="prev-btn">Previous</button>
-  <button class="next-btn">Next</button>
-</div>
-</section>
-
-<section id="contact" class="contact">
-  <h2>Contact Information</h2>
-  <p><strong>Phone:</strong> 0997679405</p>
-  <p><strong>Email:</strong> Anmanya.genius2549@gmail.com</p>
-  <p><strong>Address:</strong> Thailand</p>
-  <p><strong>Facebook:</strong> <a href="https://www.facebook.com/anmanya.kongmee" target="_blank">Anmanya Kongmee</a></p>
-  <p><strong>Instagram:</strong> <a href="https://www.instagram.com/ggnamy__/" target="_blank">@ggnamy__</a></p>
-</section>
-
-</div>
-
-<script src="carousel.js"></script>
 </body>
 </html>
