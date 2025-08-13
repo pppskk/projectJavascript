@@ -333,10 +333,21 @@ h1 {
     object-fit: cover;
     border-radius: 8px;
     flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .project-info {
     flex: 1;
+}
+
+.project-info h3 {
+    font-size: 1.2rem;
+    color: #2196F3;
+    margin: 0 0 5px 0;
+}
+
+.project-info p {
+    color: #666;
 }
 
 /* Responsive เฉพาะหน้าจอเล็ก */
