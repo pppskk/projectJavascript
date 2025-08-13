@@ -73,7 +73,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const targetPosition = target.getBoundingClientRect().top + window.scrollY;
         const startPosition = window.scrollY;
         const distance = targetPosition - startPosition;
-        const duration = 1500; // ms → ปรับให้ช้าหรือเร็วได้
+        const duration = 3000; // ms → ปรับให้ช้าหรือเร็วได้
         let startTime = null;
 
         function animation(currentTime) {
