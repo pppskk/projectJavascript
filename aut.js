@@ -52,12 +52,15 @@ updateCarousel();
 let audio = document.getElementById('Song');
 let icon = document.querySelector('.music');
 
+
 icon.addEventListener('click', () => {
     if (audio.paused) {
+        audio.loop = true;
         audio.play();
         audio.volue = 0.5;
         icon.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
     } else {
+        audio.loop = true;
         audio.pause();
         audio.volue = 0.5;
         icon.innerHTML = '<i class="fa-solid fa-volume-low"></i>';
