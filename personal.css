@@ -1,17 +1,14 @@
-/* =========================================================
-   Personal Page (personal.html)
-   ========================================================= */
 .personal-info-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* ปรับความสูงขั้นต่ำให้เต็มหน้าจอ */
+
     min-height: 10vh;
-    /* ปรับ padding-top เพื่อไม่ให้เนื้อหาถูก Navbar บัง */
+
     padding-top: 10px;
     animation: fadeIn 3.5s forwards;
-    /* เพิ่ม overflow-y เพื่อให้สามารถเลื่อนดูเนื้อหาได้หากเกินหน้าจอ */
+
     overflow-y: auto;
 }
 
