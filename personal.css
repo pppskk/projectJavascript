@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
 
-    min-height: 10vh;
+    min-height: 100vh;
 
     padding-top: 10px;
     animation: fadeIn 3.5s forwards;
@@ -83,7 +83,7 @@
 .details-container {
     display: flex;
     flex-direction: column;
-    gap: 20px; 
+    gap: 60px; 
 }
 
 .about-me-box, .hobby-box {
@@ -121,7 +121,7 @@
     margin-bottom: 20px;
     display: inline-block;
     position: absolute;
-    top: -20px;
+    top: -15px;
     left: 20px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
