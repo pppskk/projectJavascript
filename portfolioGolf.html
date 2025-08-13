@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Lumina AI - Portfolio</title>
     <link rel="stylesheet" href="portfolioGolf.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="container">
-            <h2>Lumina AI</h2>
-            <ul>
+        <div class="nav-container">
+            <div class="logo">Lumina AI</div>
+            <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -21,74 +21,163 @@
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section id="hero">
         <div class="container">
-            <h1>Hi, I'm Your Name</h1>
-            <p>Web Developer</p>
+            <div class="hero-content">
+                <h1 class="hero-title">Hi,I'm Yodsaphak panyapeng</h1>
+                <p class="hero-subtitle">Web developer</p>
+                <p class="hero-description">I craft beautiful, functional digital experiences that bridge the gap between creativity and technology. Passionate about clean code, innovative design, and cutting-edge AI solutions.</p>
+                <a href="#projects" class="cta-button">
+                    <span>View My Work</span>
+                    <span>→</span>
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- About -->
+    <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2>About Me</h2>
-            <p>I'm a passionate web developer with experience in modern web technologies. I love creating clean, functional websites and applications.</p>
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">Building tomorrow's web experiences today</p>
+            <div class="about-content">
+                <p class="about-text">
+                    I'm a passionate full-stack developer with a deep love for creating exceptional digital experiences. With expertise in modern web technologies and a keen eye for design, I transform ideas into reality through clean, efficient code and intuitive user interfaces.
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Skills -->
+    <!-- Skills Section -->
     <section id="skills">
         <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-list">
-                <div class="skill">HTML</div>
-                <div class="skill">CSS</div>
-                <div class="skill">JavaScript</div>
-                <div class="skill">React</div>
-                <div class="skill">Node.js</div>
-                <div class="skill">Python</div>
+            <h2 class="section-title">Skills & Expertise</h2>
+            <p class="section-subtitle">Technologies I work with daily</p>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend Development</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Vue.js</span>
+                        <span class="skill-tag">TypeScript</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Technologies</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Webpack</span>
+                        <span class="skill-tag">CI/CD</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects -->
+    <!-- Projects Section -->
     <section id="projects">
         <div class="container">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>Project 1</h3>
-                <p>Description of your first project goes here.</p>
-                <a href="#">View Project</a>
-            </div>
-            <div class="project">
-                <h3>Project 2</h3>
-                <p>Description of your second project goes here.</p>
-                <a href="#">View Project</a>
-            </div>
-            <div class="project">
-                <h3>Project 3</h3>
-                <p>Description of your third project goes here.</p>
-                <a href="#">View Project</a>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">A showcase of my recent work</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">AI-Powered Dashboard</h3>
+                        <p class="project-description">A comprehensive analytics dashboard built with React and Node.js, featuring real-time data visualization and machine learning insights for business intelligence.</p>
+                        <a href="#" class="project-link">
+                            <span>View Project</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <p class="project-description">Full-stack e-commerce solution with modern UI/UX, payment integration, inventory management, and admin panel. Built with React, Node.js, and MongoDB.</p>
+                        <a href="#" class="project-link">
+                            <span>View Project</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Social Media App</h3>
+                        <p class="project-description">Mobile-first social platform with real-time messaging, content sharing, and advanced privacy controls. Features include push notifications and offline support.</p>
+                        <a href="#" class="project-link">
+                            <span>View Project</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2>Contact</h2>
-            <p>Email: yodsaphak2548@example.com</p>
-            <p>Phone: 0992354486</p>
-            <p>GitHub: <a href="https://github.com/Minyeonn05">github.com/yourname</a></p>
+            <h2 class="section-title">Let's Work Together</h2>
+            <p class="section-subtitle">Ready to bring your ideas to life? Let's connect!</p>
+            <div class="contact-content">
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon">✉</div>
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value">
+                            <a href="mailto:yodsaphak2548@example.com">yodsaphak2548@example.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-label">Phone</div>
+                        <div class="contact-value">0992354486</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🔗</div>
+                        <div class="contact-label">GitHub</div>
+                        <div class="contact-value">
+                            <a href="https://github.com/Minyeonn05" target="_blank">github.com/Minyeonn05</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Lumina AI. All rights reserved.</p>
+            <div class="footer-content">
+                <p>&copy; 2025 Lumina AI. Crafted with passion and precision.</p>
+            </div>
         </div>
     </footer>
+
+    <script src="portfolioGolf.js"></script>
 </body>
 </html>
