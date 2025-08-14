@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Namthip Moonchaisai - Portfolio</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Mobile Toggle Button -->
+  <button class="mobile-toggle" onclick="toggleMobileMenu()">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="back-button" style="padding: 10px;">
+      <button onclick="window.history.back()" class="btn-back">
+        <i class="fas fa-arrow-left"></i> Back
+      </button>
+    </div>
+    <div class="profile-section">
+      <div class="profile-img">
+        <img src="IMG_1304.JPG" alt="Profile Picture">
+      </div>
+      <h1>Namthip Moonchaisai</h1>
+    </div>
+
+    <div class="social-links">
+      <a href="https://www.facebook.com/namthip.moonchaisai/" class="facebook" aria-label="Facebook"><i
+          class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/nortooorrr/" class="instagram" aria-label="Instagram"><i
+          class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/namthip-moonchaisai-176638284/" class="linkedin" aria-label="LinkedIn"><i
+          class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/pppskk" class="github" aria-label="Github"><i class="fab fa-github"></i></a>
+    </div>
+
+    <nav id="navmenu">
+      <ul class="nav-menu">
+        <li><a href="#hero" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="#skills" class="nav-link"><i class="fas fa-cog"></i> Skills</a></li>
+        <li><a href="#resume" class="nav-link"><i class="fas fa-file-alt"></i> Resume</a></li>
+        <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section id="hero" class="section">
+      <div class="hero-content">
+        <h2>Namthip Moonchaisai</h2>
+        <p>I'm <span class="typed typing-effect" data-typed-items="Designer, Developer, Freelancer">Designer</span></p>
+
+        <div class="hero-social-links">
+          <a href="https://www.facebook.com/namthip.moonchaisai/" aria-label="Facebook"><i
+              class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/nortooorrr/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/namthip-moonchaisai-176638284/" aria-label="LinkedIn"><i
+              class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/pppskk" aria-label="Github"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="section-title">
+        <h2>About</h2>
+        <p>I'm a passionate web developer who loves turning ideas into interactive, user-friendly websites. With strong
+          skills in HTML, CSS, and JavaScript, I enjoy crafting clean and responsive designs that bring value to users.
+          I'm always curious about new technologies and believe in continuous learning to improve my craft.</p>
+      </div>
+
+      <div class="about-content">
+        <div class="about-img">
+          <div class="img-placeholder">
+            <img src="IMG_1304.JPG" alt="About Me Photo">
+          </div>
+        </div>
+
+        <div class="about-text">
+          <h2>Hi, I'm Namthip</h2>
+          <p>
+            My passion for technology extends to building impactful digital solutions. I am driven by the process of
+            turning complex problems into elegant and intuitive user experiences. I'm actively seeking opportunities to
+            apply my skills in a collaborative environment and grow as a developer.
+          </p>
+
+          <div class="about-info">
+            <div class="info-item">
+              <i class="fas fa-chevron-right"></i>
+              <strong>Birthday:</strong> 6 August 2003
+            </div>
+            <div class="info-item">
+              <i class="fas fa-chevron-right"></i>
+              <strong>Phone:</strong> 099 564 6220
+            </div>
+            <div class="info-item">
+              <i class="fas fa-chevron-right"></i>
+              <strong>City:</strong> Chiang mai, Thailand
+            </div>
+            <div class="info-item">
+              <i class="fas fa-chevron-right"></i>
+              <strong>Age:</strong> 22
+            </div>
+            <div class="info-item">
+              <i class="fas fa-chevron-right"></i>
+              <strong>Degree:</strong> Bachelor
+            </div>
+            <div class="info-item">
+              <i class="fas fa-chevron-right"></i>
+              <strong>Email:</strong> namthip_m@cmu.ac.th
+            </div>
+          </div>
+
+          <p>
+            I am an enthusiastic and dedicated individual with a strong passion for web development,
+            technology, and creative problem-solving. My goal is to continuously improve my skills and
+            contribute to meaningful projects that make a difference.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="section-title">
+        <h2>Skills</h2>
+      </div>
+
+      <div class="skills-content">
+        <div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">HTML</span>
+              <i class="skill-percentage">90%</i>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="90"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">CSS</span>
+              <i class="skill-percentage">80%</i>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="80"></div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">JavaScript</span>
+              <i class="skill-percentage">75%</i>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="75"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">NodeJS</span>
+              <i class="skill-percentage">50%</i>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="50"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Resume Section -->
+    <section id="resume" class="section">
+      <div class="section-title">
+        <h2>Resume</h2>
+        <p>Hi, my name is Namthip Moonchaisai. I'm a Digital Industry Integration student from Chiang Mai, Thailand.
+          Over the years I studied a skill set in various technologies, including Python, Java and C++. Also I'm very
+          passionate about Data analysis. And last but not least, I am proud to study at Chiang Mai University. I enjoy
+          participating with many activities and I enjoy playing sports, but I am a little bit of an introvert.</p>
+      </div>
+
+      <div class="resume-content">
+        <div class="resume-section">
+          <h3 class="resume-title">Summary</h3>
+          <div class="resume-item">
+            <h4>Namthip Moonchaisai</h4>
+            <p><em>Highly motivated and creative design student with a strong foundation in graphic design principles
+                and digital media tools. Eager to apply theoretical knowledge and project-based experience to real-world
+                challenges.</em>
+            </p>
+            <ul>
+              <li>Chiang Mai, Thailand</li>
+              <li>099 564 6220</li>
+              <li>namthip_m@cmu.ac.th</li>
+            </ul>
+          </div>
+
+          <h3 class="resume-title">Education</h3>
+          <div class="resume-item">
+            <h4>Bachelor of Science Program in Integrating the digital industry</h4>
+            <h5>2024 - now</h5>
+            <p><em>Chiang Mai University, Thailand</em></p>
+            <p>Coursework includes advanced topics in digital marketing, data analytics, and software development.
+              Actively engaged in a capstone project to create a full-stack e-commerce solution using modern web
+              frameworks.</p>
+          </div>
+
+          <div class="resume-item">
+            <h4>Diploma of business</h4>
+            <h5>2023 - 2024</h5>
+            <p><em>South Australia Institute of Business and Technology(SAIBT), Australia</em></p>
+            <p>Acquired fundamental skills in business administration, marketing principles, and financial management.
+              Gained practical experience in team projects focused on market analysis and strategic planning.</p>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <h3>Experience &amp; Activities</h3>
+          <div class="resume-item">
+            <h4>The 1st PCSHS Science Symposium 2021</h4>
+            <ul>
+              <li>Awarded a Silver Medal for Oral Presentation in the Physics and Astronomy division.</li>
+              <li>Conducted a research project surveying the level of radioactivity in water slag in Chiang Rai
+                Province.</li>
+              <li>Presented scientific findings in English to a panel of judges and peers.</li>
+            </ul>
+          </div>
+
+          <div class="resume-item">
+            <h4>Young Scientist Competition (YSC)</h4>
+            <ul>
+              <li>Secured a 3,000 baht grant to develop a science project after successfully competing in the first
+                round of the Young Scientist Project Competition (YSC).</li>
+              <li>Developed a compelling project proposal that earned recognition and funding at the Northern level
+                competition.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+      <div class="section-title">
+        <h2>Contact</h2>
+        <p>Feel free to reach out to me for collaborations, freelance projects, or any inquiries.</p>
+      </div>
+
+      <div class="contact-container">
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h3>Address</h3>
+              <p>Chiang Mai, Thailand</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <h3>Call Me</h3>
+              <p>+66 99-564-6220</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h3>Email Me</h3>
+              <p>namthip_m@cmu.ac.th</p>
+            </div>
+          </div>
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3776.9484066195605!2d98.94811817543481!3d18.8004524823482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30da3a6bf542deb3%3A0x85fbac3033920444!2sCollege%20of%20Arts%2C%20Media%20and%20Technology%2C%20Chiang%20Mai%20University!5e0!3m2!1sen!2sth!4v1755010056743!5m2!1sen!2sth"
+            frameborder="0" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <form>
+            <label>Your Name</label>
+            <input type="text" name="name" required>
+
+            <label>Your Email</label>
+            <input type="email" name="email" required>
+
+            <label>Subject</label>
+            <input type="text" name="subject" required>
+
+            <label>Message</label>
+            <textarea name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script> <!--Include Typed.js for typing effect -->
+
+    <script>
+      const selectTyped = document.querySelector('.typed');
+      if (selectTyped) {
+        let typed_strings = selectTyped.getAttribute('data-typed-items');
+        typed_strings = typed_strings.split(',');
+        new Typed('.typed', {
+          strings: typed_strings, // Array of strings to type
+          loop: true,
+          typeSpeed: 100, // Speed of typing
+          backSpeed: 60, // Speed of backspacing
+          backDelay: 2000 // Delay before starting to backspace
+        });
+      }
+
+      function toggleMobileMenu() {
+        const header = document.getElementById('header');
+        header.classList.toggle('show');
+      }
+
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const skillBars = document.querySelectorAll('.skill-progress');
+        skillBars.forEach(bar => {
+          const percent = bar.getAttribute('data-width');
+          setTimeout(() => {
+            bar.style.width = percent + '%';
+          }, 100);
+        });
+
+        //  ปิดเมนูอัตโนมัติเมื่อกดลิงก์ (เฉพาะ mobile)
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            const header = document.getElementById('header');
+            if (window.innerWidth <= 1199) {
+              header.classList.remove('show');
+            }
+          });
+        });
+      });
+      // Scroll to Top Button
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+      window.onscroll = function () {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+          scrollTopBtn.style.display = "block";
+        } else {
+          scrollTopBtn.style.display = "none";
+        }
+      };
+
+      scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+
+    </script>
+  </main>
+</body>
+
+</html>
