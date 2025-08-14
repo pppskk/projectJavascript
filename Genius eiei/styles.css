@@ -1,0 +1,494 @@
+body {
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+    background: linear-gradient(135deg, #FFC0CB, #F8E6E9, #FAD0C4);
+    overflow-x: hidden;
+    position: relative; 
+}
+
+.background-container {
+    position: relative;
+    width: 100vw;
+    overflow: hidden;
+    min-height: 100vh; /* Ensure full height */
+}
+
+
+.star {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #FFEB3B, #FFC107);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    filter: drop-shadow(0 0 10px rgba(255, 204, 0, 0.5));
+    animation: twinkle 5s infinite ease-in-out;
+}
+
+.star-left {
+    top: 13%;
+    left: 30%;
+    transform: scale(1.5) rotate(15deg);
+}
+
+.star-right {
+    bottom: 15%;
+    left: 82%;
+    transform: scale(1.2) rotate(-20deg);
+}
+
+.star-top-left {
+    top: 20%;
+    left: 23%;
+    transform: scale(1.8) rotate(30deg);
+}
+
+.star-center-right {
+    top: 50%;
+    right: 10%;
+    transform: scale(1.5) rotate(-10deg);
+}
+
+.star-bottom-right {
+    bottom: 10%;
+    right: 19%;
+    transform: scale(1.2) rotate(45deg);
+}
+
+.flower-bg {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 192, 203, 0.5); /* สีชมพูอ่อน */
+    border-radius: 50%;
+    opacity: 0;
+    animation: float 8s infinite ease-in-out, fadeInOut 8s infinite ease-in-out;
+    z-index: -1;
+}
+
+.flower-1 { top: 10%; left: 10%; transform: scale(0.8); }
+.flower-2 { top: 30%; right: 15%; transform: scale(0.6); animation-delay: 1s; }
+.flower-3 { bottom: 20%; left: 25%; transform: scale(0.9); animation-delay: 2s; }
+.flower-4 { bottom: 5%; right: 30%; transform: scale(0.7); animation-delay: 3s; }
+.flower-5 { top: 45%; left: 5%; transform: scale(1); animation-delay: 4s; }
+
+.splatter {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #FFB3C6;
+    border-radius: 50%;
+    filter: blur(20px);
+    opacity: 0.6;
+    animation: fadeAndMove 15s infinite ease-in-out;
+    z-index: -1;
+}
+
+.splatter-pink-top {
+    top: 20%;
+    left: 20%;
+}
+
+.splatter-pink-bottom {
+    bottom: 20%;
+    right: 20%;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    color: #3e3e3e;
+    font-weight: 890;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo a {
+    font-size: 1.5em;
+    font-weight: 1000;
+    color: #ff9e9e; /* เปลี่ยนสีโลโก้เป็นสีขาว */
+    text-decoration: none; /* ลบขีดเส้นใต้ */
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    margin: 0;
+    padding: 10;
+    animation: fadeIn 1s ease-out 0.2s forwards;
+    opacity: 0;
+    margin-right: 80px;
+   
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #3e3e3e;
+    font-size: 1em;
+    padding: 5px 10px;
+    transition: all 0.3s ease-in-out;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+    color: #FFB3C6;
+    transform: translateY(-2px);
+    border-bottom: 2px solid #FFB3C6;
+}
+
+
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 80px;
+
+    gap: 120px; 
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.text-section {
+
+    max-width: 400px;
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+.text-section h1 {
+    font-size: 2.5em;
+    color: #f7f4f4;
+    margin-bottom: 20px;
+    animation: typing 2s steps(40, end) forwards;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.pill {
+    display: inline-block;
+    background-color: #FFF6A2;
+    padding: 8px 30px;
+    border-radius: 50px;
+    font-size: 1.2em;
+    color: #FFB3C6;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 2px solid #FFB3C6;
+    transition: transform 0.3s ease-in-out;
+}
+
+.pill:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.text-section p {
+    font-size: 1em;
+    color: #6C6C6C;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.next-button {
+    background-color: #ffffff;
+    color: #FFB3C6;
+    font-size: 1.2em;
+    padding: 15px 50px;
+    border: 3px solid #FFB3C6;
+    border-radius: 47px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    
+}
+
+.next-button:hover {
+    background-color: #FFB3C6;
+    color: #ffffff;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 179, 198, 0.5);
+    
+}
+
+.image-section {
+    position: relative;
+    transform: rotate(3deg);
+    animation: floatImage 5s infinite ease-in-out, fadeIn 2s forwards;
+}
+
+.image-frame {
+    width: 350px;
+    height: 480px;
+    background: #ffffff;
+    border: 2px solid #EAEAEA;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.image-frame:hover {
+    transform: rotate(3deg) scale(1.03);
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.15);
+}
+
+.image-frame::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 2px dashed #FFB3C6;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.image-frame-header {
+    background-color: #F0F0F0;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-bottom: 1px solid #EAEAEA;
+    position: relative;
+}
+
+.traffic-lights {
+    display: flex;
+    gap: 5px;
+}
+
+.traffic-lights .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.traffic-lights .dot.red {
+    background-color: #FF605C;
+}
+
+.traffic-lights .dot.yellow {
+    background-color: #FFBD44;
+}
+
+.traffic-lights .dot.green {
+    background-color: #00CA4E;
+}
+
+.traffic-lights .dot:hover {
+    transform: scale(1.2);
+}
+
+.title-bar {
+    text-align: center;
+    flex-grow: 1;
+    font-size: 0.9em;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.menu-bar {
+    position: absolute;
+    right: 10px;
+    font-size: 0.8em;
+    color: #8C8C8C;
+    display: flex;
+    gap: 10px;
+}
+
+.image-frame-content {
+    display: flex;
+    height: calc(100% - 30px);
+}
+
+.toolbar {
+    background-color: #F0F0F0;
+    width: 40px;
+    padding: 10px;
+    border-right: 1px solid #EAEAEA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.tool-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 3px;
+}
+
+.image-area {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.genius-tag {
+    position: absolute;
+    top: 50px;
+    left: -20px;
+    background: linear-gradient(135deg, #FFECB3, #FFD54F);
+    color: #E91E63;
+    font-size: 1.3em;
+    font-weight: 600;
+    padding: 6px 20px;
+    border-radius: 25px;
+    transform: rotate(-10deg);
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+    animation: popUp 1s ease-out;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.bottom-tools {
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+    right: 10px;
+    background: #F0F0F0;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 5px;
+    border-top: 1px solid #EAEAEA;
+}
+
+.color-picker {
+    width: 25px;
+    height: 25px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.palette {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 3px;
+}
+
+.palette-box {
+    width: 15px;
+    height: 15px;
+    background-color: #ccc;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.palette-box:hover {
+    transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    40% {
+        transform: scale3d(.9, .9, .9);
+    }
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+    80% {
+        transform: scale3d(.97, .97, .97);
+    }
+    100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes rotateAndScale {
+    0% { transform: scale(0.8) rotate(0deg); opacity: 0; }
+    100% { transform: scale(1) rotate(3deg); opacity: 1; }
+}
+
+@keyframes popUp {
+    0% { transform: scale(0) rotate(-15deg); opacity: 0; }
+    80% { transform: scale(1.1) rotate(-15deg); }
+    100% { transform: scale(1) rotate(-15deg); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+@keyframes fadeAndMove {
+    0% { transform: translate(0, 0); opacity: 0.6; }
+    25% { transform: translate(20px, 10px); }
+    50% { transform: translate(-20px, -10px); opacity: 0.4; }
+    75% { transform: translate(10px, 20px); }
+    100% { transform: translate(0, 0); opacity: 0.6; }
+}
+
+@keyframes floatImage {
+    0%, 100% { transform: translateY(0) rotate(3deg); }
+    50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
