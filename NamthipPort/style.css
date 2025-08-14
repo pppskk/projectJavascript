@@ -21,6 +21,22 @@ body {
     scroll-behavior: smooth;
 }
 
+.btn-back {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease; 
+  }
+  
+  .btn-back:hover {
+    background: #0f86b9; 
+  }
+  
+
 /* Header */
 .header {
     position: fixed;
@@ -192,8 +208,9 @@ body {
 
 /* Hero Section */
 #hero {
-    background: linear-gradient(135deg, var(--secondary-color) 0%, #1a1a2e 100%);
-    color: white;
+    /* background: linear-gradient(135deg, var(--secondary-color) 0%, #fbc4dd 100%); */
+    background: linear-gradient(135deg, #e6e6fa 0%, #ffe0b2 100%);
+    color: #0d7bb8;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -17,6 +17,11 @@
 
   <!-- Header -->
   <header class="header" id="header">
+    <div class="back-button" style="padding: 10px;">
+      <button onclick="window.history.back()" class="btn-back">
+        <i class="fas fa-arrow-left"></i> Back
+      </button>
+    </div>
     <div class="profile-section">
       <div class="profile-img">
         <img src="IMG_1304.JPG" alt="Profile Picture">
@@ -25,9 +30,12 @@
     </div>
 
     <div class="social-links">
-      <a href="https://www.facebook.com/namthip.moonchaisai/" class="facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com/nortooorrr/" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.linkedin.com/in/namthip-moonchaisai-176638284/" class="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.facebook.com/namthip.moonchaisai/" class="facebook" aria-label="Facebook"><i
+          class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/nortooorrr/" class="instagram" aria-label="Instagram"><i
+          class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/namthip-moonchaisai-176638284/" class="linkedin" aria-label="LinkedIn"><i
+          class="fab fa-linkedin"></i></a>
       <a href="https://github.com/pppskk" class="github" aria-label="Github"><i class="fab fa-github"></i></a>
     </div>
 
@@ -48,12 +56,14 @@
     <section id="hero" class="section">
       <div class="hero-content">
         <h2>Namthip Moonchaisai</h2>
-        <p>I'm <span class="typing-effect" id="typing-text">Developer</span></p>
+        <p>I'm <span class="typed typing-effect" data-typed-items="Designer, Developer, Freelancer">Designer</span></p>
 
         <div class="hero-social-links">
-          <a href="https://www.facebook.com/namthip.moonchaisai/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.facebook.com/namthip.moonchaisai/" aria-label="Facebook"><i
+              class="fab fa-facebook"></i></a>
           <a href="https://www.instagram.com/nortooorrr/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/namthip-moonchaisai-176638284/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/namthip-moonchaisai-176638284/" aria-label="LinkedIn"><i
+              class="fab fa-linkedin"></i></a>
           <a href="https://github.com/pppskk" aria-label="Github"><i class="fab fa-github"></i></a>
         </div>
       </div>
@@ -78,7 +88,9 @@
         <div class="about-text">
           <h2>Hi, I'm Namthip</h2>
           <p>
-            My passion for technology extends to building impactful digital solutions. I am driven by the process of turning complex problems into elegant and intuitive user experiences. I'm actively seeking opportunities to apply my skills in a collaborative environment and grow as a developer.
+            My passion for technology extends to building impactful digital solutions. I am driven by the process of
+            turning complex problems into elegant and intuitive user experiences. I'm actively seeking opportunities to
+            apply my skills in a collaborative environment and grow as a developer.
           </p>
 
           <div class="about-info">
@@ -109,8 +121,8 @@
           </div>
 
           <p>
-            I am an enthusiastic and dedicated individual with a strong passion for web development, 
-            technology, and creative problem-solving. My goal is to continuously improve my skills and 
+            I am an enthusiastic and dedicated individual with a strong passion for web development,
+            technology, and creative problem-solving. My goal is to continuously improve my skills and
             contribute to meaningful projects that make a difference.
           </p>
         </div>
@@ -187,8 +199,9 @@
           <h3 class="resume-title">Summary</h3>
           <div class="resume-item">
             <h4>Namthip Moonchaisai</h4>
-            <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing
-                user-centered digital/print marketing material from initial concept to final, polished deliverable.</em>
+            <p><em>Highly motivated and creative design student with a strong foundation in graphic design principles
+                and digital media tools. Eager to apply theoretical knowledge and project-based experience to real-world
+                challenges.</em>
             </p>
             <ul>
               <li>Chiang Mai, Thailand</li>
@@ -303,7 +316,22 @@
       </div>
     </section>
 
+     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script> <!--Include Typed.js for typing effect -->
+
     <script>
+      const selectTyped = document.querySelector('.typed');
+      if (selectTyped) {
+        let typed_strings = selectTyped.getAttribute('data-typed-items');
+        typed_strings = typed_strings.split(',');
+        new Typed('.typed', {
+          strings: typed_strings, // Array of strings to type
+          loop: true,
+          typeSpeed: 100, // Speed of typing
+          backSpeed: 60, // Speed of backspacing
+          backDelay: 2000 // Delay before starting to backspace
+        });
+      }
+
       function toggleMobileMenu() {
         const header = document.getElementById('header');
         header.classList.toggle('show');
@@ -311,25 +339,25 @@
 
 
       document.addEventListener('DOMContentLoaded', () => {
-    const skillBars = document.querySelectorAll('.skill-progress');
-    skillBars.forEach(bar => {
-      const percent = bar.getAttribute('data-width');
-      setTimeout(() => {
-        bar.style.width = percent + '%';
-      }, 100);
-    });
+        const skillBars = document.querySelectorAll('.skill-progress');
+        skillBars.forEach(bar => {
+          const percent = bar.getAttribute('data-width');
+          setTimeout(() => {
+            bar.style.width = percent + '%';
+          }, 100);
+        });
 
-    //  ปิดเมนูอัตโนมัติเมื่อกดลิงก์ (เฉพาะ mobile)
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        const header = document.getElementById('header');
-        if (window.innerWidth <= 1199) { 
-          header.classList.remove('show');
-        }
+        //  ปิดเมนูอัตโนมัติเมื่อกดลิงก์ (เฉพาะ mobile)
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            const header = document.getElementById('header');
+            if (window.innerWidth <= 1199) {
+              header.classList.remove('show');
+            }
+          });
+        });
       });
-    });
-  });
     </script>
   </main>
 </body>
