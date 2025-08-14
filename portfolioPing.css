@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -183,15 +184,57 @@ h2 {
 
 h1 {
     font-size: 2.5rem;
-    color: white;
     margin: 0;
+    color: white;
 }
 
 .job-title {
-    font-size: 1.2rem;
-    color: #FFF6A2;
-    margin-top: 5px;
+    display: inline-block;
+    font-size: 1.5rem;
+    margin: -10px;
 }
+
+.job-title span {
+    display: inline-block;
+    position: relative;
+    color: transparent;
+    -webkit-text-stroke: .5px #FFF6A2;
+    animation: display-text 8s linear infinite;
+    animation-delay: calc(-4s * var(--i));
+}
+
+@keyframes display-text {
+
+    25%,
+    100% {
+        display: none;
+    }
+}
+
+.job-title span::before {
+    content: attr(data-text);
+    position: absolute;
+    width: 0;
+    border-right: 2px solid #FFF6A2;
+    color: #FFF6A2;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: fill-text 2.5s linear infinite;
+}
+
+@keyframes fill-text {
+
+    10%,
+    100% {
+        width: 0;
+    }
+
+    70%,
+    90% {
+        width: 100%;
+    }
+}
+
 
 .about {
     flex: 1;
