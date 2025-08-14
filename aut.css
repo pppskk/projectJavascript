@@ -236,16 +236,29 @@ nav a.highlight:hover {
     border: none;
 }
 
+.hero-contect{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
 .hero-contect ul li{
     display: inline-block;
     margin-top: .65rem;
     margin-left: .65rem;
     margin-right: .65rem;
+    height: 3rem;
+    width: 3rem;
 }
 
-.hero-contect img {
-    height: 2.65rem;
-    width: 2.65rem;
+.hero-contect a {
+    color: #10101f;
+    height: 3rem;
+    width: 3rem;
+}
+
+.hero-contect i {
+    height: 3rem;
+    width: 3rem;
 }
 
 .container {
@@ -651,7 +664,6 @@ nav a.highlight:hover {
 }
 
 .wrapper button {
-    background-color: #FFF6A2;
     opacity: 0.8;
     height: 48px;
     width: 48px;
@@ -675,11 +687,13 @@ button i {
 }
 
 #prev {
+    background-color: #B3E5FF;
     left: 1.5rem;
     z-index: 10;
 }
 
 #next {
+    background-color: #FFB3C6;
     right: 1.5rem;
     z-index: 10;
 }
