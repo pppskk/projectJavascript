@@ -191,6 +191,11 @@ body, html {
   --card: #111827;      /* card background */
   --accent: #60a5fa;    /* buttons & accents */
   --ring: #3b82f6;      /* focus ring */
+   --slider-w: min(100%, 900px);
+    --aspect: 16/9;
+    --dot-size: 10px;
+      --dot-active-size: 12px;
+      --gap: 8px;
 }
 
 
@@ -365,3 +370,4 @@ body, html {
   color: white;
 }
 
+/*-----------------------------*/
