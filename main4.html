@@ -5,811 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lumina AI - Creative Entertainment & AI Solutions</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      overflow-x: hidden;
-    }
-
-    /* Header & Navigation */
-    .navbar {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      padding: 15px 0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
-      background: linear-gradient(45deg, #667eea, #764ba2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      transition: transform 0.3s ease;
-    }
-
-    .logo:hover {
-      transform: scale(1.05);
-    }
-
-    .nav-menu {
-      display: flex;
-      list-style: none;
-      gap: 30px;
-    }
-
-    .nav-menu a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      position: relative;
-      padding: 5px 0;
-    }
-
-    .nav-menu a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -2px;
-      left: 0;
-      background: linear-gradient(45deg, #667eea, #764ba2);
-      transition: width 0.3s ease;
-    }
-
-    .nav-menu a:hover::after,
-    .nav-menu a.active::after {
-      width: 100%;
-    }
-
-    .nav-menu a.active {
-      color: #667eea;
-    }
-
-    /* Mobile Menu */
-    .mobile-menu-btn {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 4px;
-    }
-
-    .mobile-menu-btn span {
-      width: 25px;
-      height: 3px;
-      background: #333;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-
-    .mobile-menu-btn.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .mobile-menu-btn.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .mobile-menu-btn.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -6px);
-    }
-
-    .mobile-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(20px);
-      padding: 20px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .mobile-menu.active {
-      display: block;
-      animation: slideDown 0.3s ease;
-    }
-
-    .mobile-menu a {
-      display: block;
-      padding: 15px 0;
-      color: #333;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-      transition: color 0.3s ease;
-    }
-
-    .mobile-menu a:hover {
-      color: #667eea;
-    }
-
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(135deg, #f099ae 0%, #69bae5 50%, #ece074 100%);
-      color: white;
-      padding: 120px 0 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      /* background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.1"/><circle cx="10" cy="90" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>'); */
-    }
-
-    .hero-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      position: relative;
-      z-index: 2;
-      width: 100%;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      animation: fadeInUp 1s ease-out;
-    }
-
-    .hero .subtitle {
-      font-size: clamp(1.1rem, 3vw, 1.5rem);
-      margin-bottom: 30px;
-      opacity: 0.9;
-      animation: fadeInUp 1s ease-out 0.3s both;
-    }
-
-    .hero .description {
-      font-size: clamp(1rem, 2.5vw, 1.1rem);
-      max-width: 800px;
-      margin: 0 auto 40px;
-      opacity: 0.8;
-      animation: fadeInUp 1s ease-out 0.6s both;
-      line-height: 1.8;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.2);
-      color: white;
-      padding: 15px 40px;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
-      animation: fadeInUp 1s ease-out 0.9s both;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-button:hover {
-      background: rgba(255, 255, 255, 0.3);
-      border-color: rgba(255, 255, 255, 0.5);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    .cta-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: left 0.5s;
-    }
-
-    .cta-button:hover::before {
-      left: 100%;
-    }
-
-    /* Floating particles */
-    .particle {
-      position: absolute;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    /* Stats Section */
-    .stats {
-      background: white;
-      padding: 60px 0;
-      margin-top: -40px;
-      position: relative;
-      z-index: 3;
-      border-radius: 30px 30px 0 0;
-      box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .stats-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
-    }
-
-    .stat-item {
-      text-align: center;
-      padding: 30px 20px;
-      background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
-      border-radius: 20px;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(102, 126, 234, 0.1);
-    }
-
-    .stat-item:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 15px 40px rgba(102, 126, 234, 0.15);
-    }
-
-    .stat-number {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: bold;
-      background: linear-gradient(45deg, #667eea, #764ba2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    .stat-label {
-      font-size: 1rem;
-      color: #666;
-      font-weight: 500;
-    }
-
-    /* Services Section */
-    .services {
-      padding: 100px 0;
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-      position: relative;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin-bottom: 20px;
-      background: linear-gradient(45deg, #667eea, #764ba2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      font-size: clamp(1rem, 3vw, 1.2rem);
-      color: #666;
-      margin-bottom: 60px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.8;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-    }
-
-    .service-card {
-      background: white;
-      padding: 40px;
-      border-radius: 25px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      transition: all 0.4s ease;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.5);
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(45deg, #667eea, #764ba2);
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-
-    .service-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .service-card:hover {
-      transform: translateY(-15px);
-      box-shadow: 0 25px 60px rgba(102, 126, 234, 0.15);
-      background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
-    }
-
-    .service-icon {
-      font-size: 4rem;
-      margin-bottom: 20px;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-
-    .service-card:hover .service-icon {
-      transform: scale(1.1) rotate(5deg);
-    }
-
-    .service-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-      color: #333;
-      transition: color 0.3s ease;
-    }
-
-    .service-card:hover h3 {
-      background: linear-gradient(45deg, #667eea, #764ba2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .service-card p {
-      color: #666;
-      line-height: 1.7;
-      font-size: 0.95rem;
-    }
-
-    /* Works Section */
-    .works {
-      padding: 100px 0;
-      background: #fff;
-      position: relative;
-    }
-
-    .works-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 40px;
-      margin-top: 60px;
-    }
-
-    .work-card {
-      background: white;
-      padding: 35px;
-      border-radius: 25px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-      transition: all 0.4s ease;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .work-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.05), transparent);
-      transition: left 0.6s;
-    }
-
-    .work-card:hover::before {
-      left: 100%;
-    }
-
-    .work-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 50px rgba(102, 126, 234, 0.12);
-    }
-
-    .work-thumb {
-      font-weight: bold;
-      color: #667eea;
-      margin-bottom: 15px;
-      font-size: 1.1rem;
-    }
-
-    .work-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 15px;
-      color: #333;
-      line-height: 1.4;
-    }
-
-    .work-card p {
-      color: #666;
-      line-height: 1.7;
-      margin-bottom: 20px;
-      font-size: 0.95rem;
-    }
-
-    .work-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .pill {
-      background: linear-gradient(45deg, #667eea, #764ba2);
-      color: white;
-      padding: 8px 16px;
-      border-radius: 25px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      white-space: nowrap;
-    }
-
-    /* Team Section */
-    .team {
-      padding: 100px 0;
-      background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
-      position: relative;
-    }
-
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
-      margin-top: 60px;
-    }
-
-    .team-member {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(20px);
-      border-radius: 25px;
-      padding: 35px 25px;
-      text-align: center;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      height: 100%;
-    }
-
-    .team-member:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 30px 60px rgba(102, 126, 234, 0.15);
-      background: rgba(255, 255, 255, 0.95);
-    }
-
-    .team-member::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-
-    .team-member:hover::before {
-      transform: scaleX(1);
-    }
-
-    .member-avatar {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      margin: 0 auto 20px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-      color: white;
-      transition: all 0.4s ease;
-      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
-    }
-    .member-avatar img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .member-avatar:hover {
-      transform: scale(1.05) rotate(-5deg);
-    }
-
-    .member-name {
-      font-size: 1.3rem;
-      font-weight: bold;
-      margin-bottom: 8px;
-      color: #333;
-    }
-
-    .member-position {
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-weight: 600;
-      margin-bottom: 15px;
-      font-size: 1rem;
-    }
-
-    .member-description {
-      color: #666;
-      line-height: 1.6;
-      margin-bottom: 25px;
-      font-size: 0.9rem;
-      flex-grow: 1;
-    }
-
-    .portfolio-link {
-      display: inline-block;
-      background: linear-gradient(45deg, #667eea, #764ba2);
-      color: white;
-      padding: 12px 28px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      font-size: 0.9rem;
-    }
-
-    .portfolio-link:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-      background: linear-gradient(45deg, #5a6fd8, #6a4190);
-    }
-
-    /* Footer */
-    .footer {
-      background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
-      color: white;
-      padding: 80px 0 30px;
-      position: relative;
-    }
-
-    .footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.5), transparent);
-    }
-
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-    }
-
-    .footer-section h3 {
-      margin-bottom: 25px;
-      color: #667eea;
-      font-size: 1.2rem;
-    }
-
-    .footer-section p,
-    .footer-section li {
-      color: #a0aec0;
-      line-height: 1.8;
-      margin-bottom: 8px;
-    }
-
-    .footer-section ul {
-      list-style: none;
-    }
-
-    .footer-section a {
-      color: #a0aec0;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-
-    .footer-section a:hover {
-      color: #667eea;
-      transform: translateX(5px);
-    }
-
-    .footer-bottom {
-      text-align: center;
-      margin-top: 50px;
-      padding-top: 30px;
-      border-top: 1px solid #4a5568;
-      color: #a0aec0;
-    }
-
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-
-    .floating {
-      animation: float 3s ease-in-out infinite;
-    }
-
-    /* Scroll Animations */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .nav-menu {
-        display: none;
-      }
-
-      .mobile-menu-btn {
-        display: flex;
-      }
-
-      .hero {
-        padding: 100px 0 60px;
-        min-height: 90vh;
-      }
-
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .section-title {
-        font-size: 2rem;
-      }
-
-      .services-grid,
-      .works-grid,
-      .team-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .service-card,
-      .work-card,
-      .team-member {
-        padding: 25px 20px;
-      }
-
-      .stats-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-      }
-
-      .stat-item {
-        padding: 20px 15px;
-      }
-
-      .footer-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .stats-container {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-content {
-        padding: 0 15px;
-      }
-
-      .container {
-        padding: 0 15px;
-      }
-    }
-
-    /* Accessibility improvements */
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-
-    /* Focus styles for keyboard navigation */
-    .nav-menu a:focus,
-    .cta-button:focus,
-    .portfolio-link:focus {
-      outline: 2px solid #667eea;
-      outline-offset: 2px;
-    }
-  </style>
+  <link rel="stylesheet" href="mainStyle.css">
 </head>
 
 <body>
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="logo">Lumina AI ✨</div>
+      <div class="logo"><a href="#home"> Lumina AI ✨</a></div>
       <ul class="nav-menu">
         <li><a href="#home" class="nav-link active">Home</a></li>
         <li><a href="#services" class="nav-link">Services</a></li>
@@ -836,14 +39,14 @@
   <section id="home" class="hero">
     <div class="hero-content">
       <h1>Lumina AI</h1>
-      <p class="subtitle">✨ Where Creativity Meets Intelligence 🎭</p>
+      <p class="subtitle">✨ Where Creativity Meets Intelligence </p>
       <p class="description">
         Step into the future of creative expression with Lumina AI. Our revolutionary platform combines
         state-of-the-art artificial intelligence with artistic vision to help creators, artists, and
         dreamers bring their wildest ideas to life. From breathtaking visuals to soul-stirring music,
         immersive animations to lifelike voices - your creative journey starts here.
       </p>
-      <a href="#services" class="cta-button">🚀 Start Creating Now</a>
+      <a href="#services" class="cta-button"> Start Creating Now</a>
     </div>
   </section>
 
@@ -987,9 +190,9 @@
           <h3 class="member-name">Anut Chuatrakool</h3>
           <p class="member-position">AI Research Engineer</p>
           <p class="member-description">
-            Former Google Brain researcher with PhD in Machine Learning from MIT. Pioneer in generative AI and neural architecture design. Published 50+ papers on creative AI and holds 12 patents in deep learning.
+            Researches and experiments with new AI technologies, develops specialized models for clients, and maintains the technical architecture of all systems.
           </p>
-          <a href="#" class="portfolio-link">Research Papers</a>
+          <a href="aut.html" class="portfolio-link">Anut's Portfolio</a>
         </div>
 
         <div class="team-member fade-in">
@@ -999,44 +202,45 @@
           <h3 class="member-name">Warissara Aromdee</h3>
           <p class="member-position">Marketing Specialist</p>
           <p class="member-description">
-            Award-winning digital artist and creative technologist. Former Disney Imagineering lead with 15 years in entertainment industry. Bridges the gap between cutting-edge technology and human creativity.
+            Identifies new business opportunities, builds client relationships, presents solutions, and promotes the company through various channels.
           </p>
-          <a href="#" class="portfolio-link">Art Portfolio</a>
+          <a href="PortfolioPing/portfolioPing.html" class="portfolio-link">Warissara's Portfolio</a>
         </div>
 
         <div class="team-member fade-in">
-          <div class="member-avatar">📷</div>
+          <div class="member-avatar">
+            <img src="PortfolioGasidit/Temp_Profile.jpg" alt="Profile Picture">
+          </div>
           <h3 class="member-name">Gasidit Anuwong</h3>
           <p class="member-position">Motion & Animation Specialist</p>
           <p class="member-description">
-            Specializes in AI-assisted photography and digital compositing. Collaborated with global fashion brands to produce visually stunning and futuristic campaigns.
+            Creates motion graphics, short animations, and promotional videos. They are skilled at building upon AI-generated content using motion design software.
           </p>
-          <a href="#" class="portfolio-link">Photo Gallery</a>
+          <a href="PortfolioGasidit/Tonpai.html" class="portfolio-link">Gasidit's Portfolio</a>
         </div>
         
-
         <div class="team-member fade-in">
           <div class="member-avatar">
-            <img src="img/profile (1).jpg" alt="Profile Picture">
+            <img src="picture/Me01.jpg" alt="Profile Picture">
           </div>
-          <h3 class="member-name">Anmanya Khongmee</h3>
-          <p class="member-position">Frontend Developer</p>
+          <h3 class="member-name">Anugul Sompoch</h3>
+          <p class="member-position">Quality Assurance (QA)</p>
           <p class="member-description">
-            Full-stack architect with expertise in scalable AI infrastructure. Former Netflix senior engineer who built systems serving millions. Ensures our platform performs flawlessly at global scale.
+            Ensures the quality and accuracy of all deliverables before they are sent to clients. Provides general administrative support and project coordination.
           </p>
-          <a href="#" class="portfolio-link">Tech Blog</a>
+          <a href="index.html" class="portfolio-link">Anugul's Portfolio</a>
         </div>
 
         <div class="team-member fade-in">
           <div class="member-avatar">
-
+            <img src="G.png" alt="Profile Picture">
           </div>
           <h3 class="member-name">Yodsaphak Panyapeng</h3>
           <p class="member-position">Audio & Music AI Specialist</p>
           <p class="member-description">
-            Human-computer interaction specialist focused on making AI accessible to everyone. Former Apple design lead with expertise in intuitive interfaces and user empowerment through technology.
+            Generates soundtracks, sound effects, and voiceovers using various AI tools, with the ability to edit and refine audio files for high-quality production.
           </p>
-          <a href="portfolioGolf.html" class="portfolio-link">Design Studies</a>
+          <a href="portfolioGolf.html" class="portfolio-link">Yodsaphak's Portfolio</a>
         </div>
 
         <div class="team-member fade-in">
@@ -1046,21 +250,21 @@
           <h3 class="member-name">Pherawich Teachamai</h3>
           <p class="member-position">Generative Artist / Prompt Engineer</p>
           <p class="member-description">
-            Futurist and technology strategist who identifies emerging trends in creative AI. Former MIT Media Lab researcher exploring the intersection of technology, culture, and human expression.
+            Creates images and concept art using AI, masters advanced prompt writing, and fine-tunes visual styles to meet client specifications.
           </p>
-          <a href="#" class="portfolio-link">Future Insights</a>
+          <a href="Profile_Potato.html" class="portfolio-link">Pherawich's Portfolio</a>
         </div>
 
         <div class="team-member fade-in">
           <div class="member-avatar">
-
+            <img src="img/profile (1).jpg" alt="Profile Picture">
           </div>
-          <h3 class="member-name">Sofia Martinez</h3>
-          <p class="member-position">Quality Assurance (QA)</p>
+          <h3 class="member-name">Anmanya<br>Khongmee</h3>
+          <p class="member-position">Frontend Developer</p>
           <p class="member-description">
-            Expert in AI-driven animation workflows. Worked on Netflix Originals and major advertising campaigns integrating generative video and real-time rendering.
+            Builds and maintains the company's website, develops UI/UX for platforms, and creates client-facing tools as needed.
           </p>
-          <a href="#" class="portfolio-link">Animation Reels</a>
+          <a href="Genius eiei/index.html" class="portfolio-link">Anmanya's Portfolio</a>
         </div>
 
         <div class="team-member fade-in">
@@ -1070,9 +274,9 @@
           <h3 class="member-name">Namthip Moonchaisai</h3>
           <p class="member-position">Project Manager</p>
           <p class="member-description">
-            Grammy-nominated producer and AI audio specialist. Expert in neural audio synthesis and music generation. Collaborated with major labels to develop next-generation music creation tools.
+            Oversees the studio's vision, receives client briefs, plans and manages projects, and ensures the quality of work meets client goals.
           </p>
-          <a href="NamthipPort/portfolio.html" class="portfolio-link">Music Samples</a>
+          <a href="NamthipPort/portfolio.html" class="portfolio-link">Namthip's Portfolio</a>
         </div>
         
       </div>
@@ -1133,202 +337,8 @@
         Intelligence ✨</p>
     </div>
   </section>
+  <script src="mainScript.js"></script>
 
-  <script>
-    // Mobile menu toggle
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    let isMenuOpen = false;
-
-    mobileMenuBtn.addEventListener('click', () => {
-      isMenuOpen = !isMenuOpen;
-      mobileMenuBtn.classList.toggle('active');
-      mobileMenu.classList.toggle('active');
-    });
-
-    // Close mobile menu when clicking links
-    document.querySelectorAll('.mobile-link').forEach(link => {
-      link.addEventListener('click', () => {
-        isMenuOpen = false;
-        mobileMenuBtn.classList.remove('active');
-        mobileMenu.classList.remove('active');
-      });
-    });
-
-    // Close mobile menu when resizing to desktop
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768 && isMenuOpen) {
-        isMenuOpen = false;
-        mobileMenuBtn.classList.remove('active');
-        mobileMenu.classList.remove('active');
-      }
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          const navHeight = document.querySelector('.navbar').offsetHeight;
-          const targetPosition = target.offsetTop - navHeight;
-          
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-
-    // Active navigation highlight
-    function updateActiveNavigation() {
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.nav-link');
-      const navHeight = document.querySelector('.navbar').offsetHeight;
-      
-      let current = '';
-      
-      sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
-        const sectionHeight = section.offsetHeight;
-        
-        if (window.pageYOffset >= sectionTop - navHeight - 100 && 
-            window.pageYOffset < sectionTop + sectionHeight - navHeight - 100) {
-          current = section.getAttribute('id');
-        }
-      });
-      
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').substring(1) === current) {
-          link.classList.add('active');
-        }
-      });
-    }
-
-    // Scroll animations
-    function checkScroll() {
-      const elements = document.querySelectorAll('.fade-in');
-      elements.forEach(element => {
-        const rect = element.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight * 0.8;
-
-        if (isVisible) {
-          element.classList.add('visible');
-        }
-      });
-    }
-
-    // Counter animation for stats
-    function animateCounters() {
-      const counters = document.querySelectorAll('.stat-number');
-      
-      counters.forEach(counter => {
-        const target = parseFloat(counter.getAttribute('data-target'));
-        const isDecimal = target % 1 !== 0;
-        let current = 0;
-        const increment = target / 60;
-        
-        const timer = setInterval(() => {
-          current += increment;
-          
-          if (current >= target) {
-            counter.textContent = isDecimal ? target.toFixed(1) : Math.floor(target).toLocaleString();
-            if (target >= 1000) {
-              counter.textContent = (Math.floor(target / 1000)) + 'K+';
-            }
-            if (target === 99.9) {
-              counter.textContent = '99.9%';
-            }
-            clearInterval(timer);
-          } else {
-            let displayValue = isDecimal ? current.toFixed(1) : Math.floor(current);
-            if (target >= 1000 && current >= 1000) {
-              displayValue = Math.floor(current / 1000) + 'K';
-            }
-            counter.textContent = displayValue;
-          }
-        }, 50);
-      });
-    }
-
-    // Navbar background on scroll
-    function handleNavbar() {
-      const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 2px 30px rgba(0, 0, 0, 0.15)';
-      } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-      }
-    }
-
-    // Create floating particles in hero section
-    function createParticles() {
-      const hero = document.querySelector('.hero');
-      const particleCount = 20;
-
-      for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.top = Math.random() * 100 + '%';
-        particle.style.width = Math.random() * 4 + 2 + 'px';
-        particle.style.height = particle.style.width;
-        particle.style.animationDelay = Math.random() * 3 + 's';
-        particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
-        particle.classList.add('floating');
-        
-        hero.appendChild(particle);
-      }
-    }
-
-    // Initialize animations
-    let countersAnimated = false;
-
-    function initAnimations() {
-      checkScroll();
-      handleNavbar();
-      updateActiveNavigation();
-
-      // Animate counters when stats section is visible
-      if (!countersAnimated) {
-        const statsSection = document.querySelector('.stats');
-        const rect = statsSection.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.8) {
-          animateCounters();
-          countersAnimated = true;
-        }
-      }
-    }
-
-    // Event listeners
-    window.addEventListener('scroll', initAnimations);
-    window.addEventListener('load', () => {
-      initAnimations();
-      createParticles();
-    });
-
-    // Initialize on page load
-    checkScroll();
-    
-    // Performance optimization: throttle scroll events
-    let ticking = false;
-    
-    function handleScroll() {
-      if (!ticking) {
-        requestAnimationFrame(initAnimations);
-        ticking = true;
-        setTimeout(() => {
-          ticking = false;
-        }, 16); // ~60fps
-      }
-    }
-    
-    window.addEventListener('scroll', handleScroll);
-  </script>
 </body>
 
 </html>
