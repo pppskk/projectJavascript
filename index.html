@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lumina AI – Creative Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+   
+  <header class="navbar">
+    <div class="logo">Lumina AI ✨</div>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skill</a>
+      <a href="#gallery">Gallery</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="back-btn" title="Back to Lumina AI">Back</button>
+    </div>
+  </header>
+
+  <!-- HOME: 3D Particles + Content -->
+  <section id="home" class="section home">
+    <div id="three-home"></div>
+    <div class="hero-card glass reveal">
+      <div class="hero-top">
+        <img class="avatar" src="picture/Me01.jpg" alt="Profile"/>
+        <div class="hero-text">
+          <h1>Hi , I'm <span class="highlight">Anugul Sompoch</span></h1>
+          <p class="tagline">AI for Create images, compose music, do voice-overs, and make animations.</p>
+          <div class="hero-cta">
+            <a class="btn primary" href="#gallery">View My Work</a>
+            <a class="btn ghost" href="#about">About Me</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-badges">
+        <span class="badge depth-1">🎨 AI Art</span>
+        <span class="badge depth-2">🎵 Generative Music</span>
+        <span class="badge depth-3">🎙️ Voice Synth</span>
+        <span class="badge depth-1">🎬 2D/3D Animation</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT: 3D TorusKnot + Content -->
+  <section id="about " class="section about">
+    <div id="three-about" class="bg-3d"></div>
+    <h2 class="section-title reveal">About Me</h2>
+    <p class="section-subtitle reveal">
+      
+    </p>
+
+    <div class="about-grid">
+      <figure class="about-card tilt reveal depth-2">
+        <img class="about-photo" src="picture/Ballerina Cappuccino.jpg" alt="AI Art Workflow"/>
+        <figcaption>Workflow: Prompt • Stylize • Post-process</figcaption>
+      </figure>
+
+      <div class="about-text glass reveal depth-1">
+        <h3>What I Do</h3>
+        <ul class="about-list">
+          <li>AI Image Design </li>
+          <li>Music Composition with generative tools</li>
+          <li>Realistic Voice-Overs</li>
+          <li>2D/3D Animation for unique storytelling</li>
+        </ul>
+        <h3>Awards / Certifications</h3>
+        <ul class="about-list">
+          <li>🏆 Creative AI Award – Lumina AI (2024)</li>
+          <li>📜 Certified AI Multimedia Designer (2023)</li>
+        </ul>
+      </div>
+
+      <figure class="about-card tilt reveal depth-3">
+        <img class="about-photo" src="picture/Music&Voice.png" alt="Music & Voice"/>
+        <figcaption>Music & Voice Lab: Generate Sounds & Audio with Deep Learning Models</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE: parallax icons + timeline -->
+  <section id="experience" class="section experience">
+    <div class="parallax-icons">
+      <span class="picon depth-1">🎧</span>
+      <span class="picon depth-2">🎬</span>
+      <span class="picon depth-3">🎨</span>
+      <span class="picon depth-2">🎤</span>
+    </div>
+    <h2 class="section-title reveal">Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item reveal depth-1">
+        <div class="dot"></div>
+        <div class="content">
+          <h3>2025 – AI Entertainment Lead, Lumina AI</h3>
+          <p>Project management for images, music, sound, and animation across brand campaigns and showcases.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal depth-2">
+        <div class="dot"></div>
+        <div class="content">
+          <h3>2024 – Creative Technologist (Freelance)</h3>
+          <p>Soundtracks for 6 short films</p>
+          <p>Voice-overs for 10 animated characters</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal depth-3">
+        <div class="dot"></div>
+        <div class="content">
+          <h3>2023 – AI Art for Marketing</h3>
+          <p>"Pastel Future" Campaign: 120 pieces for online and billboards</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS: 2D Bubble Canvas + cards -->
+  <section id="skills" class="section skills">
+    <canvas id="skills-canvas"></canvas>
+    <h2 class="section-title reveal">Skill</h2>
+    <div class="skill-grid">
+      <div class="skill-card reveal tilt depth-1">
+        <div class="skill-head"><h3>AI Image Generation</h3><span class="skill-pct">90%</span></div>
+        <div class="progress"><span class="bar" style="--val:90%"></span></div>
+        <p class="skill-desc">Prompt craft, style transfer, upscaling, post-process</p>
+      </div>
+      <div class="skill-card reveal tilt depth-2">
+        <div class="skill-head"><h3>Generative Music</h3><span class="skill-pct">80%</span></div>
+        <div class="progress"><span class="bar" style="--val:80%"></span></div>
+        <p class="skill-desc">motifs, ambience scoring, mixing basics</p>
+      </div>
+      <div class="skill-card reveal tilt depth-3">
+        <div class="skill-head"><h3>Voice Synthesis</h3><span class="skill-pct">85%</span></div>
+        <div class="progress"><span class="bar" style="--val:85%"></span></div>
+        <p class="skill-desc">timbre control, prosody, multi-language</p>
+      </div>
+      <div class="skill-card reveal tilt depth-2">
+        <div class="skill-head"><h3>2D/3D Animation</h3><span class="skill-pct">75%</span></div>
+        <div class="progress"><span class="bar" style="--val:75%"></span></div>
+        <p class="skill-desc">motion design, camera moves, compositing</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY: 3D wave grid bg + grid + modal -->
+  <section id="gallery" class="section gallery">
+    <div id="three-gallery" class="bg-3d"></div>
+    <h2 class="section-title reveal">Gallery</h2>
+    <p class="section-subtitle reveal">Work Samples – Click to Zoom</p>
+    <div class="gallery-grid">
+      <figure class="gallery-item reveal depth-1">
+        <img src="picture/G01.png" alt="Artwork 01" />
+        <figcaption>Concept Art – Neon City</figcaption>
+      </figure>
+      <figure class="gallery-item reveal depth-2">
+        <img src="picture/G02.png" alt="Artwork 02" />
+        <figcaption>AI Portrait – Pastel Tone</figcaption>
+      </figure>
+      <figure class="gallery-item reveal depth-3">
+        <img src="picture/G03.png" alt="Artwork 03" />
+        <figcaption>Album Cover – Dreamwave</figcaption>
+      </figure>
+      <figure class="gallery-item reveal depth-2">
+        <img src="picture/G04.png" alt="Artwork 04" />
+        <figcaption>Frame Animation – Loop</figcaption>
+      </figure>
+      <figure class="gallery-item reveal depth-1">
+        <img src="picture/G05.png" alt="Artwork 05" />
+        <figcaption>Voice Character – Poster</figcaption>
+      </figure>
+      <figure class="gallery-item reveal depth-3">
+        <img src="picture/G06.png" alt="Artwork 06" />
+        <figcaption>Generative Pattern</figcaption>
+      </figure>
+    </div>
+
+    <!-- Modal Zoom -->
+    <div class="modal" id="modal">
+      <button class="modal-close" aria-label="close">✕</button>
+      <img id="modal-img" alt="zoom"/>
+      <p id="modal-cap"></p>
+    </div>
+  </section>
+
+  <footer class="footer">© 2025 Lumina AI Portfolio — Designed with Me💗</footer>
+  <!-- Three.js -->
+  <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
+  <!-- Scenes -->
+  <script src="particles-home.js"></script>
+  <script src="scenes.js"></script>
+  <!-- 2D Effects -->
+  <script src="script.js"></script>
+</body>
+</html>
