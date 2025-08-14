@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yodsaphak Panyapeng - Portfolio</title>
+    <link rel="stylesheet" href="portfolioGolf.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo" onclick="scrollToTop()">Lumina AI</div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <!--เหลือแค่เอาไปใส่ Main -->
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="scrollToTop()" title="Back to top">
+        ↑
+    </button>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">I'm Yodsaphak Panyapeng</h1>
+                <p class="hero-subtitle">Web Developer</p>
+                <p class="hero-description">I craft beautiful, functional digital experiences that bridge the gap between creativity and technology. Passionate about clean code, innovative design, and cutting-edge web solutions.</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="cta-button primary">
+                        <span>View My Work</span>
+                        <span>→</span>
+                    </a>
+                    <a href="#contact" class="cta-button">
+                        <span>Get In Touch</span>
+                        <span>✉</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">Building tomorrow's web experiences today</p>
+            <div class="about-content">
+                <div class="about-text">
+                    I'm a passionate web developer with a deep love for creating exceptional digital experiences. With expertise in modern web technologies and a keen eye for design, I transform ideas into reality through clean, efficient code and intuitive user interfaces. My journey in web development has been driven by curiosity and a commitment to continuous learning, always staying current with the latest trends and best practices in the industry.
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">1+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support Available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <p class="section-subtitle">Technologies and tools I work with daily</p>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend Development</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Technologies</h3>
+                    <div class="skills-list">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">VS Code</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">A showcase of my recent work and achievements</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Relieve project</h3>
+                        <p class="project-description">A website for find some relieve in life</p>
+                        <a href="https://www.figma.com/design/7eFgyXYB4XIvDIn2iAPbzR/Untitled?node-id=0-1&p=f&t=OR3AJsuuZgsSPKQm-0" class="project-link">
+                            <span>View Project</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Hotel app for Java</h3>
+                        <p class="project-description">Hotel management for admin and guest</p>
+                        <a href="https://github.com/Minyeonn05/DII-GEN6-CompoundSEC/issues" class="project-link">
+                            <span>View Project</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Work Together</h2>
+            <p class="section-subtitle">Ready to bring your ideas to life? Let's connect and discuss your next project!</p>
+            <div class="contact-content">
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon">✉</div>
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value">
+                            <a href="mailto:yodsaphak2548@example.com">yodsaphak2548@example.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-label">Phone</div>
+                        <div class="contact-value">
+                            <a href="tel:0992354486">0992354486</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🔗</div>
+                        <div class="contact-label">GitHub</div>
+                        <div class="contact-value">
+                            <a href="https://github.com/Minyeonn05" target="_blank">github.com/Minyeonn05</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Yodsaphak Panyapeng. Crafted with passion and precision.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="portfolioGolf.js"></script>
+</body>
+</html>
