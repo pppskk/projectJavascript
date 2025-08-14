@@ -1,3 +1,33 @@
+:root {
+    /* Light theme colors */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --nav-bg: rgba(255, 255, 255, 0.95);
+    --nav-text: #333333;
+    --card-bg: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --accent-color: #60c7ff;
+    --accent-secondary: #fe5882;
+}
+
+[data-theme="dark"] {
+    /* Dark theme colors */
+    --bg-primary: #0f0f23;
+    --bg-secondary: #1a1a2e;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --nav-bg: rgba(15, 15, 35, 0.95);
+    --nav-text: #ffffff;
+    --card-bg: #1a1a2e;
+    --border-color: #2a2a3e;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --accent-color: #4facfe;
+    --accent-secondary: #00f2fe;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,9 +37,11 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
     overflow-x: visible;
     user-select: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .tabbed {
@@ -18,23 +50,21 @@ body {
 
 /* Header & Navigation */
 .navbar {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--nav-bg);
     backdrop-filter: blur(20px);
     padding: 15px 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    transition: background 0.3s ease-in-out;
-    transition: box-shadow 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     box-shadow: none;
-    /* box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1); */
+    /* box-shadow: 0 2px 20px var(--shadow); */
 }
 
 .navbar.scrolled {
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s ease-in-out;
-    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 0 2px 20px var(--shadow);
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .navbar.black {
@@ -47,6 +77,23 @@ body {
     z-index: 1000;
     transition: background 0.3s ease-in-out;
     transition: box-shadow 0.3s ease-in-out;
+}
+
+.navbar.black .nav-container .nav-menu a {
+    color: #FFF6A2;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar.black .nav-container .nav-menu a.highlight {
+    color: #10101f;
+}
+
+.navbar.black .theme i {
+    color: #ffffff !important;
+}
+
+.navbar.black .theme i.fa-sun {
+    color: #ffd700 !important;
 }
 
 .nav-container {
@@ -81,15 +128,10 @@ body {
 
 .nav-menu a {
     text-decoration: none;
-    color: #333;
+    color: var(--nav-text);
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
-}
-
-.navbar.black .nav-container .nav-menu a {
-    color: #FFF6A2;
-    transition: color 0.3s ease-in-out;
 }
 
 .nav-menu a::after {
@@ -124,13 +166,32 @@ body {
     cursor: pointer;
 }
 
+.theme {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.theme:hover {
+    transform: scale(1.1);
+}
+
+.theme i {
+    font-size: 1.2rem;
+    color: var(--nav-text);
+    transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .theme i {
+    color: #ffd700;
+}
+
 nav a.highlight {
     /* Base styles for the button */
     margin-top: 1.5rem;
     padding: 0.8em 1.5em;
-    background-color: #B3E5FF;
+    background-color: var(--accent-color);
     border: none;
-    color: #10101f;
+    color: var(--bg-primary);
     border-radius: 1000px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: relative;
@@ -139,10 +200,6 @@ nav a.highlight {
     cursor: pointer;
     transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
     z-index: 0;
-}
-
-.navbar.black .nav-container .nav-menu a.highlight {
-    color: #10101f;
 }
 
 nav a.highlight:after {
@@ -222,7 +279,7 @@ nav a.highlight:hover {
 }
 
 .hero {
-    background: white no-repeat center center/cover;
+    background: var(--bg-primary) no-repeat center center/cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -234,7 +291,7 @@ nav a.highlight:hover {
 
 .hero-content {
     text-align: center;
-    color: #333;
+    color: var(--text-primary);
     margin-bottom: 20px;
     /* เพิ่มระยะห่างด้านล่างของโมเดล */
 }
@@ -268,6 +325,7 @@ nav a.highlight:hover {
 .hero-contect i {
     height: 3rem;
     width: 3rem;
+    color: #10101f;
 }
 
 .container {
@@ -291,7 +349,7 @@ nav a.highlight:hover {
 .typing-effect {
     display: inline-block;
     /* font-size: 2.5rem; */
-    color: #333;
+    color: var(--text-primary);
     white-space: nowrap;
     overflow: hidden;
     width: 0;
@@ -303,7 +361,7 @@ nav a.highlight:hover {
     content: "";
     padding-right: 0.1em;
     opacity: 0.6;
-    border-right: 0.08em solid #333;
+    border-right: 0.08em solid var(--text-primary);
     animation: blink-caret 0.75s step-end infinite;
 }
 
@@ -337,13 +395,13 @@ nav a.highlight:hover {
     }
 
     50% {
-        border-color: #333;
+        border-color: var(--text-primary);
     }
 }
 
 .hero-text p {
     font-size: 0.8rem;
-    color: #666;
+    color: var(--text-secondary);
     max-width: 600px;
     /* จำกัดความกว้างของข้อความ */
     margin: 20px auto;
@@ -351,7 +409,7 @@ nav a.highlight:hover {
 }
 
 .about {
-    background: white no-repeat center center/cover;
+    background: var(--bg-primary) no-repeat center center/cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -595,7 +653,7 @@ nav a.highlight:hover {
 }
 
 .gallery {
-    background: white no-repeat center center/cover;
+    background: var(--bg-primary) no-repeat center center/cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -612,7 +670,7 @@ nav a.highlight:hover {
     margin-top: auto;
     margin-bottom: 8px;
     text-align: center;
-    color: #333;
+    color: var(--text-primary);
 }
 
 .card {
@@ -756,6 +814,38 @@ button i {
     color: #a0aec0;
 }
 
+
+/* Theme Transitions */
+section {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme specific adjustments */
+[data-theme="dark"] .hero-text p {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .about-info h1,
+[data-theme="dark"] .about-info h2 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .about-info p {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .gallery h1 {
+    color: var(--text-primary);
+}
+
+/* Additional theme improvements */
+[data-theme="dark"] .hero-contect a {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .hero-contect i {
+    color: var(--text-primary);
+}
 
 /* Responsive */
 @media (max-width: 768px) {

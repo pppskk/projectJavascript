@@ -122,38 +122,38 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('open');
     });
 
-    window.addEventListener('scroll', () => {
-        function onScroll() {
-            // รับตำแหน่งของส่วน 'experience' เทียบกับ viewport
-            const experiencePositionTop = experienceSection.getBoundingClientRect().top;
-            const skillsPositionBottom = skillsSection.getBoundingClientRect().bottom;
+            window.addEventListener('scroll', () => {
+            function onScroll() {
+                // รับตำแหน่งของส่วน 'experience' เทียบกับ viewport
+                const experiencePositionTop = experienceSection.getBoundingClientRect().top;
+                const skillsPositionBottom = skillsSection.getBoundingClientRect().bottom;
 
-            // กำหนดระยะที่ต้องการให้เริ่มเปลี่ยน (เช่น 50px จากขอบบนของ viewport)
-            const offset = 50;
+                // กำหนดระยะที่ต้องการให้เริ่มเปลี่ยน (เช่น 50px จากขอบบนของ viewport)
+                const offset = 50;
 
-            if (skillsPositionBottom <= offset) {
-                navbar.classList.add('scrolled');
-                navbar.classList.remove('black');
-            } else if (experiencePositionTop <= offset) {
-                // ถ้าส่วน 'experience' เลื่อนขึ้นมาถึงขอบบนของ viewport (หรือเลยไปแล้ว)
-                // ให้เพิ่มคลาส 'black' และลบคลาส 'scrolled'
-                navbar.classList.add('black');
-                navbar.classList.remove('scrolled');
-            } else if (window.scrollY > 50) {
-                // ถ้าเลื่อนลงมาเกิน 50px แต่ยังไม่ถึงส่วน 'experience'
-                // ให้เพิ่มคลาส 'scrolled'
-                navbar.classList.add('scrolled');
-                navbar.classList.remove('black');
-            } else {
-                // ถ้าเลื่อนกลับขึ้นไปที่ด้านบนสุดของหน้า
-                // ให้ลบคลาสทั้งหมดออก
-                navbar.classList.remove('scrolled');
-                navbar.classList.remove('black');
+                if (skillsPositionBottom <= offset) {
+                    navbar.classList.add('scrolled');
+                    navbar.classList.remove('black');
+                } else if (experiencePositionTop <= offset) {
+                    // ถ้าส่วน 'experience' เลื่อนขึ้นมาถึงขอบบนของ viewport (หรือเลยไปแล้ว)
+                    // ให้เพิ่มคลาส 'black' และลบคลาส 'scrolled'
+                    navbar.classList.add('black');
+                    navbar.classList.remove('scrolled');
+                } else if (window.scrollY > 50) {
+                    // ถ้าเลื่อนลงมาเกิน 50px แต่ยังไม่ถึงส่วน 'experience'
+                    // ให้เพิ่มคลาส 'scrolled'
+                    navbar.classList.add('scrolled');
+                    navbar.classList.remove('black');
+                } else {
+                    // ถ้าเลื่อนกลับขึ้นไปที่ด้านบนสุดของหน้า
+                    // ให้ลบคลาสทั้งหมดออก
+                    navbar.classList.remove('scrolled');
+                    navbar.classList.remove('black');
+                }
             }
-        }
 
-        // เพิ่ม Event Listener เพื่อเรียกใช้ฟังก์ชันเมื่อมีการเลื่อนหน้าจอ
-        window.addEventListener('scroll', onScroll);
+            // เพิ่ม Event Listener เพื่อเรียกใช้ฟังก์ชันเมื่อมีการเลื่อนหน้าจอ
+            window.addEventListener('scroll', onScroll);
 
         // ... (โค้ดสำหรับ hero section) ...
         const rect = heroSection.getBoundingClientRect();
@@ -242,4 +242,35 @@ document.addEventListener('DOMContentLoaded', () => {
             heroContent.style.opacity = easedOpacityMin;
         }
     });
+});
+
+// Theme Management
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    
+    // Check for saved theme preference or default to light theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+    
+    // Theme toggle functionality
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    });
+    
+    // Update theme icon based on current theme
+    function updateThemeIcon(theme) {
+        const icon = themeToggle.querySelector('i');
+        if (theme === 'dark') {
+            icon.className = 'fa-solid fa-sun';
+        } else {
+            icon.className = 'fa-solid fa-moon';
+        }
+    }
 });
