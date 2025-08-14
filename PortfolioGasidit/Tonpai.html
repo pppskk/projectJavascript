@@ -11,17 +11,18 @@
     <header class="navbar">
         <nav>
             <ul>
+                <li><a href="#Home"><b>Lumina Ai</b></a></li>
                 <li><a href="#Home">Home</a></li>
                 <li><a href="#About">About</a></li>
                 <li><a href="#skill">Skill</a></li>
-                <li><a href="#">idk 2</a></li>
+                <li><a href="#Contact">Conatct</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="Wallpaper1">
 
-        <div class="somthing"></div>
+ 
 
         <div class="card">
             <div class="profile-left">
@@ -47,11 +48,19 @@
 
             <div class="profile-description">
                 <h2 class="profile-name">Gasidit Anuwong</h2>
-                <p class="profile-position">Full-stack Developer</p>
+                <p class="profile-position">Generative Visual Artist</p>
                 <p class="profile-somthing">
                    Always Create everything from ideas
                 </p>
+                
             </div>
+        </div>
+
+               <div class="somthing"></div>
+
+        <div class="card1" id="About">
+            <h1 style="text-align: center;">About</h1>
+            <p style="text-align:center;">As a Generative Visual Artist, I merge creativity with computational design to craft visuals that are both dynamic and data-driven. My work explores the intersection of art and technology, using algorithms, generative systems, and creative coding to produce visuals that evolve, adapt, and surprise. From abstract digital compositions to interactive installations, I transform code into visual experiences that push the boundaries of traditional artistry. My focus is on experimentation, innovation, and crafting imagery that resonates on both aesthetic and conceptual levels.</p>
         </div>
 
         <div class="card">
@@ -93,8 +102,90 @@
 
     </div>
 
-    <div class="wallpaper2">
 
+    <div class="wallpaper2">
+        
+        <div class="card2" role="region" aria-labelledby="contact2-title">
+  <div class="card2__header">
+    <span class="badge">Contact</span>
+    <h2 id="contact2-title" class="title">Let’s build something generative ✨</h2>
+    <p class="subtitle">Have a project in mind, need a collaboration, or just want to say hi? Send a message and I’ll get back to you.</p>
+  </div>
+
+  <div class="card2__body" id="Contact">
+    <!-- Contact Form -->
+    <form action="#" method="post" novalidate>
+      <div class="row">
+        <div>
+          <label for="name2">Your Name</label>
+          <input id="name2" name="name" type="text" placeholder="Jane Doe" required />
+        </div>
+        <div>
+          <label for="email2">Email</label>
+          <input id="email2" name="email" type="email" placeholder="jane@email.com" required />
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="subject2">Subject</label>
+          <input id="subject2" name="subject" type="text" placeholder="Project inquiry" required />
+        </div>
+        <div>
+          <label for="type2">Project Type</label>
+          <select id="type2" name="type" aria-label="Project Type">
+            <option value="" selected disabled>Select one</option>
+            <option>Visual Identity</option>
+            <option>Installation</option>
+            <option>Interactive Web</option>
+            <option>Motion/Video</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label for="message2">Message</label>
+        <textarea id="message2" name="message" placeholder="Tell me a bit about your idea…" required></textarea>
+      </div>
+
+      <div class="actions">
+        <button class="btn" type="submit">Send Message</button>
+        <span class="hint">I usually reply within 1–2 business days.</span>
+      </div>
+    </form>
+
+    <!-- Contact Info / Socials -->
+    <aside class="info" aria-label="Contact information">
+      <div class="panel">
+        <h4>Direct</h4>
+        <ul class="list">
+          <li><span class="small">Email</span><br><span class="mono">gasidit0anu@gmail.com</span></li>
+          <li><span class="small">Phone</span><br><span class="mono">+66 80 000 0000</span></li>
+          <li><span class="small">Location</span><br>Chiang Mai, Thailand (GMT+7)</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h4>Social</h4>
+        <p>Feel free to DM for quick questions.</p>
+        <ul class="list">
+          <li>Instagram — @Gasidit Anuwong</li>
+          <li>Twitter/X — @MyCoolest thing</li>
+          <li>Behance/Dribbble — yourhandle</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h4>Notes</h4>
+        <p class="small">Submitting this form won’t send anything without a backend. Hook it to your email service, Google Form, or an API endpoint.</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+      
+  
     </div>
 
 </body>
