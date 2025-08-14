@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anud</title>
+    <link rel="stylesheet" href="aut.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="javascript:history.back()">
+                <div class="logo" data-i18n="logo">Lumina AI ✨</div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home" data-i18n="home">Home</a></li>
+                <li><a href="#about" data-i18n="about">About</a></li>
+                <li><a href="#experience" data-i18n="experience">Experience</a></li>
+                <li><a href="#skills" data-i18n="skills">Skills</a></li>
+                <li><a href="#gallery" data-i18n="gallery">Gallery</a></li>
+                <li>
+                    <a href="javascript:history.back()" class="highlight" data-i18n="back">Back</a>
+                </li>
+                <li>
+                    <a class="vib music"><i class="fa-solid fa-volume-low"></i></a>
+                </li>
+                <li>
+                    <a class="vib language">en</a>
+                </li>
+                <li>
+                    <a class="vib theme" id="theme-toggle">
+                        <i class="fa-solid fa-moon"></i>
+                    </a>
+                </li>
+
+                <!--<li><a href="#team">ทีมงาน</a></li>
+                <li><a href="#contact">ติดต่อเรา</a></li> -->
+            </ul>
+        </div>
+    </nav>
+    <!-- <div class="curtain left"></div>
+    <div class="curtain right"></div> -->
+    <!-- Hero Pages-->
+    <section id="home" class="hero container">
+        <div class="hero-content">
+            <model-viewer id="hero-model" src="model/ps5.glb" camera-orbit="165deg 0deg" shadow-intensity="1"
+                alt="model ps5" loading="eager" disable-progress-bar>
+            </model-viewer>
+        </div>
+        <div class="hero-text">
+            <h1 class="typing-effect" data-i18n="name">Anut Chuatrakool </h1>
+            <p data-i18n="career">"Passionate and skilled software developer with experience in mobile app development using Flutter, web
+                development, and robotics. I am eager to join a team where I can continue to grow, work on new
+                challenges, and create software that is both functional and user-friendly, contributing to the success
+                of the team and the company."</p>
+        </div>
+        <div class="hero-contect">
+            <ul>
+                <li><a href="https://www.facebook.com/aut.anud" target="_blank"><i alt="Facebook Logo" class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/autcraft/" target="_blank"><i alt="Instagram Logo" class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://wa.me/qr/4VEWMEADUW4LN1" target="_blank"><i alt="WhatsApp Logo" class="fa-brands fa-whatsapp"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-contect">
+            <model-viewer id="about-model" src="model/ps5.glb" camera-orbit="165deg 0deg" shadow-intensity="1"
+                alt="model ps5" loading="eager" disable-progress-bar>
+            </model-viewer>
+        </div>
+        <div class="about-info">
+            <ul>
+                <li>
+                    <h1 class="Page" data-i18n="about_title">About</h1>
+                </li>
+                <li>
+                    <img src="img/Profile.jpg" alt="Anut Chuatrakool ">
+                    <h2 data-i18n="name_title">Anut Chuatrakool</h2>
+                    <p data-i18n="brith"> 21 กุมพาพันธุ์ พ.ศ.2549</p>
+                    <p data-i18n="nationality">สัญชาติ: ไทย, เชื่อชาติ: ไทย</p>
+                    <p data-i18n="religion">ศาสนา: พุทธ</p>
+                    <p data-i18n="address">ที่อยู่: 628 หมู่ 2 ต. เวียง อ. ฝาง จ. เชียงใหม่</p>
+                </li>
+            </ul>
+            <ul>
+                <li>
+
+                </li>
+                <li>
+                    <h2 data-i18n="hobby_title">&#9749; งานอดิเรก</h2>
+                    <p data-i18n="hobby1">- เขียนโค้ด</p>
+                    <p data-i18n="hobby2">- อ่านหนังสือ</p>
+                    <p data-i18n="hobby3">- เล่นเกม</p>
+                    <p data-i18n="hobby4">- ศึกษาสิ่งที่อยากรู้</p>
+                </li>
+                <li>
+                    <h2 data-i18n="educational_title">&#128220; ข้อมูลการศึกษา</h2>
+                    <p data-i18n="educational1">- ประถม : โรงเรียนรังษีวิทยา</p>
+                    <p data-i18n="educational2">- มัธยมศึกษาต้น : โรงเรียนรังษีวิทยา (GPAX: 3.26)</p>
+                    <p data-i18n="educational3">- มัธยมศึกษาปลาย : โรงเรียนรังษีวิทยา วิทย์-คณิต-คอม (GPAX: 3.25)</p>
+                    <p data-i18n="educational4">- ปริญญาตรี : มหาวิทยาลัยเชียงใหม่ (กำลังศึกษา)</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="experience-content">
+            <h1 data-i18n="work_experience_title">&#128209; Work Experience</h1>
+            <p class="work-topic" data-i18n="work_topic1">1. High School Final Project - Teacher Class Swap Management App</p>
+            <p class="work-in" data-i18n="work_in1"> Year: 2023</p>
+            <p class="tabbed" data-i18n="work_tabbed1">
+                Developed a mobile application using Flutter to manage class swap requests for teachers.
+                Successfully created a beta version that significantly reduced paperwork, earning positive feedback from
+                teachers for its practicality and ease of use.
+            </p>
+            <p class="work-topic" data-i18n="work_topic2">2. Robotics Project - 6-Legged Spider Robot</p>
+            <p class="work-in" data-i18n="work-in2">
+                Year: 2022
+            </p>
+            <p class="tabbed" data-i18n="work_tabbed2">
+                Designed and built a 6-legged spider robot for a school science fair.
+                The robot gained widespread popularity within the school and was later showcased in multiple events due
+                to its impressive design and functionality.
+            </p>
+            <p class="work-topic" data-i18n="work_topic3">3. Coding Competition - CMRG Chiang Mai Robot Games</p>
+            <p class="work-in" data-i18n="work-in3">
+                Year: 2022
+            </p>
+            <p class="tabbed" data-i18n="work_tabbed3">
+                Participated in a coding competition using micro:bit
+                and won first place.
+                Achieved a perfect score in the practical round and acquired new coding knowledge and skills through the
+                competition.
+            </p>
+            <p class="work-topic" data-i18n="work_topic4">4. Speaker - "Senior Teaches Junior" Event</p>
+            <p class="work-in" data-i18n="work-in4">
+                Year: 2022
+            </p>
+            <p class="tabbed" data-i18n="work_tabbed4">
+                Served as a speaker and mentor at the "Senior Teaches Junior" event.
+                Enhanced public speaking skills and successfully taught younger students computer basics, helping them
+                build a strong foundation for future learning.
+            </p>
+            <p class="work-topic" data-i18n="work_topic5">5. National Student Arts and Crafts Competition - 70th Edition</p>
+            <p class="work-in" data-i18n="work-in5">
+                Year: 2022
+            </p>
+            <p class="tabbed" data-i18n="work_tabbed5">
+                Competed in the 70th National Student Arts and Crafts Competition and secured first place, advancing to
+                the national level.
+                The experience expanded my knowledge and opened up new perspectives through exposure to diverse skills
+                and crafts.
+            </p>
+        </div>
+        <div class="experience-model">
+            <model-viewer id="experience-model" src="model/cartoon_rocket_ship.glb" camera-orbit="90deg 75deg"
+                shadow-intensity="1" alt="model ps5" loading="eager" disable-progress-bar>
+            </model-viewer>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <h1 data-i18n="skills_title">&#127942; Skills</h1>
+        <div class="skills-container">
+            <div class="skill-item">
+                <img src="img/skills/c-lang.png" alt="C language" width="50" height="50">
+                <!-- <p>C language</p> -->
+            </div>
+            <div class="skill-item">
+                <img src="img/skills/nodejs.png" alt="Node js" width="50" height="30">
+                <!-- <p>Node js</p> -->
+            </div>
+            <div class="skill-item">
+                <img src="img/skills/html.png" alt="HTML" width="50" height="50">
+                <!-- <p>HTML</p> -->
+            </div>
+            <div class="skill-item">
+                <img src="img/skills/css.png" alt="CSS" width="50" height="50">
+                <!-- <p>CSS</p> -->
+            </div>
+            <div class="skill-item">
+                <img src="img/skills/java.png" alt="Java" width="50" height="50">
+                <!-- <p>Java</p> -->
+            </div>
+
+            <div class="skill-item">
+                <img src="img/skills/adobe-ps.png" alt="Adobe Photoshop" width="50" height="50">
+                <!-- <p>Adobe Photoshop</p> -->
+            </div>
+            <div class="skill-item">
+                <img src="img/skills/adobe-pr.png" alt="Adobe Premiere pro" width="50" height="50">
+                <!-- <p>Adobe Premiere pro</p> -->
+            </div>
+            <div class="skill-item">
+                <img src="img/skills/flutter.png" alt="Flutter" width="50" height="50">
+                <!-- <p>Flutter</p> -->
+            </div>
+            <div class="skill-item">
+                <img src="img/skills/arduino.png" alt="Arduino" width="50" height="50">
+                <!-- <p>Arduino</p> -->
+            </div>
+            <div class="skill-item">
+                <img src="img/skills/microbit.png" alt="Micro:bit" width="50" height="30">
+                <!-- <p>Micro:bit</p> -->
+            </div>
+        </div>
+        <div class="moon-wrapper">
+            <img src="img/moon.webp" alt="Moon">
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h1 data-i18n="gallery_title">&#127912; Gallery</h1>
+        <!-- <div class="gallery-warp">
+            <i class="fa-solid fa-angle-left" id="backBtn"></i>
+            <div class="gallery-content">
+                <div>
+                    <span><img src="img/gallery/1.jpg"></span>
+                </div>
+                <div>
+                    <span><img src="img/gallery/2.jpg"></span>
+                </div>
+                <div>
+                    <span><img src="img/gallery/3.jpg"></span>
+                </div>
+                <div>
+                    <span><img src="img/gallery/4.png"></span>
+                </div>
+                <div>
+                    <span><img src="img/gallery/5.jpg"></span>
+                </div>
+                <div>
+                    <span><img src="img/gallery/6.jpg"></span>
+                </div>
+                <div>
+                    <span><img src="img/gallery/7.jpg"></span>
+                </div>
+                <div>
+                    <span><img src="img/gallery/8.jpg"></span>
+                </div>
+                <div>
+                    <span><img src="img/gallery/9.jpg"></span>
+                </div>
+                <div>
+                    <span><img src="img/gallery/10.jpg"></span>
+                </div>
+                <div>
+                    <span><img src="img/gallery/11.jpg"></span>
+                </div>
+                <div>
+                    <span><img src="img/gallery/12.jpg"></span>
+                </div>
+                <div>
+                    <span><img src="img/gallery/13.png"></span>
+                </div>
+                <div>
+                    <span><img src="img/gallery/14.jpg"></span>
+                </div>
+                <div>
+                    <span><img src="img/gallery/15.jpg"></span>
+                </div>
+                <div>
+                    <span><img src="img/gallery/16.png"></span>
+                </div>
+                <div>
+                    <span><img src="img/gallery/17.jpg"></span>
+                </div>
+            </div>
+            <i class="fa-solid fa-angle-right" id="nextBtn"></i>
+        </div> -->
+        <div class="wrapper">
+            <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
+            <div class="container-warp">
+                <div class="card">
+                    <img src="img/gallery/1.jpg" alt="Gallery Image 1" width="100%" height="100%">
+                </div>
+                <div class="card">
+                    <img src="img/gallery/2.jpg" alt="Gallery Image 2">
+                </div>
+                <div class="card">
+                    <img src="img/gallery/3.jpg" alt="Gallery Image 3">
+                </div>
+                <div class="card">
+                    <img src="img/gallery/4.png" alt="Gallery Image 4">
+                </div>
+                <div class="card">
+                    <img src="img/gallery/5.jpg" alt="Gallery Image 5">
+                </div>
+                <div class="card">
+                    <img src="img/gallery/6.jpg" alt="Gallery Image 6">
+                </div>
+                <div class="card">
+                    <img src="img/gallery/7.jpg" alt="Gallery Image 7">
+                </div>
+                <div class="card">
+                    <img src="img/gallery/8.jpg" alt="Gallery Image 8">
+                </div>
+                <div class="card">
+                    <img src="img/gallery/9.jpg" alt="Gallery Image 9">
+                </div>
+                <div class="card">
+                    <img src="img/gallery/10.jpg" alt="Gallery Image 10">
+                </div>
+                <div class="card">
+                    <img src="img/gallery/11.jpg" alt="Gallery Image 11">
+                </div>
+                <div class="card">
+                    <img src="img/gallery/12.jpg" alt="Gallery Image 12">
+                </div>
+                <div class="card">
+                    <img src="img/gallery/13.png" alt="Gallery Image 13">
+                </div>
+                <div class="card">
+                    <img src="img/gallery/14.jpg" alt="Gallery Image 14">
+                </div>
+                <div class="card">
+                    <img src="img/gallery/15.jpg" alt="Gallery Image 15">
+                </div>
+                <div class="card">
+                    <img src="img/gallery/16.png" alt="Gallery Image 16">
+                </div>
+                <div class="card">
+                    <img src="img/gallery/17.jpg" alt="Gallery Image 17">
+                </div>
+            </div>
+            <button id="next"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="footer">
+        <div class="footer-content">
+            <div class="footer-section fade-in">
+                <h3 data-i18n="footer_logo">Lumina AI</h3>
+                <p data-i18n="footer_com_creer">บริษัทพัฒนาซอฟต์แวร์ที่มุ่งมั่นสร้างสรรค์นวัตกรรมเทคโนโลยีเพื่อความสำเร็จของธุรกิจลูกค้า</p>
+                <p data-i18n="footer_com_address">📍 ที่อยู่: 123 ถนน หน้ามอ มหาลัยแห่งหนึ่งย่านเชียงใหม่</p>
+            </div>
+
+            <div class="footer-section fade-in">
+                <h3 data-i18n="footer_services_title">บริการของเรา</h3>
+                <ul>
+                    <li><a href="#services" data-i18n="footer_services1">ระบบ Point of Sale (POS)</a></li>
+                    <li><a href="#services" data-i18n="footer_services2">แอปพลิเคชันมือถือ</a></li>
+                    <li><a href="#services" data-i18n="footer_services3">เว็บไซต์และระบบออนไลน์</a></li>
+                    <li><a href="#services" data-i18n="footer_services4">ปรึกษาด้านเทคโนโลี</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section fade-in">
+                <h3 data-i18n="footer_contect">ติดต่อเรา</h3>
+                <ul>
+                    <li data-i18n="footer_phone">📞 โทร: 02-XXX-XXXX</li>
+                    <li data-i18n="footer_mail">📧 อีเมล: Lumina@innovatech.co.th</li>
+                    <li data-i18n="footer_line">💬 Line: @Lumina_AI</li>
+                    <li data-i18n="footer_website">🌐 เว็บไซต์: www.LuminaAi.co.th</li>
+                </ul>
+            </div>
+
+            <div class="footer-section fade-in">
+                <h3 data-i18n="footer_connectUs">เชื่อมต่อกับเรา</h3>
+                <p data-i18n="footer_connectUs_des">ติดตามข่าวสารและผลงานใหม่ๆ ของเรา</p>
+                <ul>
+                    <li><a href="#">Facebook</a></li> 
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Lumina AI. All rights reserved. | <span data-i18n="footer_created">สร้างด้วยความใส่ใจโดยทีม LUMINA AI </span></p>
+        </div>
+    </section>
+    <audio id="Song">
+        <source src="audio/Cafe.mp3" type="audio/mpeg">
+    </audio>
+    <script src="aut.js"></script>
+    <script src="lang.js"></script>
+    <script src="model/model.js"></script>
+</body>
+
+</html>
