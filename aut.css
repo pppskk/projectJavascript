@@ -106,13 +106,22 @@ body {
 .nav-menu a:hover::after {
     width: 100%;
 }
+.nav-menu li a.vib i:hover{
+    cursor: pointer;
+}
 
 .nav-menu li a.vib::after {
     background: none;
+    cursor: pointer;
 }
 
 .nav-menu li a.vib:hover::after {
     width: 0%;
+    cursor: pointer;
+}
+
+.language {
+    cursor: pointer;
 }
 
 nav a.highlight {
