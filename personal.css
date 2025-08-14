@@ -54,7 +54,7 @@
     animation: float 3s infinite ease-in-out, fadeIn 1s ease-out;
 }
 
-/* Floating Star Effect for profile picture container */
+
 .profile-image-container::after {
     content: '';
     position: absolute;

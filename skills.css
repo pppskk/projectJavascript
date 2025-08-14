@@ -1,16 +1,14 @@
-/* =========================================================
-   Skills Page (skills.html)
-   ========================================================= */
+
 .skills-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 1vh; /* ปรับให้เต็มความสูงของหน้าจอ */
+    min-height: 1vh; 
     padding-top: 60px;
-    padding-bottom: 20px; /* เพิ่ม padding ด้านล่าง */
+    padding-bottom: 20px;
     animation: fadeIn 1.5s forwards;
-    overflow-y: auto; /* เพิ่มการเลื่อนเมื่อเนื้อหาเกินหน้าจอ */
+    overflow-y: auto; 
 }
 
 .page-title {
@@ -20,7 +18,7 @@
     margin-bottom: 20px;
     animation: fadeInDown 1s ease-out;
     background: #FFC0CB;
-    padding: 15px 20px; /* ปรับขนาด padding */
+    padding: 15px 20px; 
     border-radius: 50px;
     letter-spacing: 2px;
     font-weight: 600;
@@ -28,9 +26,9 @@
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* ปรับเป็น 4 คอลัมน์ */
+    grid-template-columns: repeat(4, 1fr); 
     gap: 40px;
-    max-width: 1200px; /* ขยายความกว้างสูงสุดเพื่อให้มีพื้นที่สำหรับ 4 คอลัมน์ */
+    max-width: 1200px; 
     width: 100%;
 }
 
