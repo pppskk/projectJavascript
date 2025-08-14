@@ -10,7 +10,7 @@
 * {
     margin: 0;
     padding: 0;
-     box-sizing: border-box; /*รวม padding และ border เข้าไปในขนาด */
+    box-sizing: border-box; /*รวม padding และ border เข้าไปในขนาด */
 }
 
 body {
@@ -18,7 +18,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
-    scroll-behavior: smooth;
+    scroll-behavior: smooth ;
 }
 
 .btn-back {
@@ -587,3 +587,26 @@ body {
         font-size: 28px;
     }
 }
+
+#scrollTopBtn {
+    display: none; 
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 18px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    outline: none;
+    padding: 12px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  #scrollTopBtn:hover {
+    background: #005fc7;
+    transform: scale(1.1);
+  }
+  

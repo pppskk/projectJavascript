@@ -316,7 +316,15 @@
       </div>
     </section>
 
-     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script> <!--Include Typed.js for typing effect -->
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script> <!--Include Typed.js for typing effect -->
 
     <script>
       const selectTyped = document.querySelector('.typed');
@@ -358,6 +366,24 @@
           });
         });
       });
+      // Scroll to Top Button
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+      window.onscroll = function () {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+          scrollTopBtn.style.display = "block";
+        } else {
+          scrollTopBtn.style.display = "none";
+        }
+      };
+
+      scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+
     </script>
   </main>
 </body>
