@@ -203,10 +203,11 @@ body {
     font-size: 1.2em;
     padding: 15px 50px;
     border: 3px solid #FFB3C6;
-    border-radius: 50px;
+    border-radius: 47px;
     cursor: pointer;
-    font-weight: bold;
     transition: all 0.3s ease-in-out;
+
+    
 }
 
 .next-button:hover {
@@ -214,6 +215,7 @@ body {
     color: #ffffff;
     transform: translateY(-5px) scale(1.05);
     box-shadow: 0 10px 20px rgba(255, 179, 198, 0.5);
+    
 }
 
 .image-section {
