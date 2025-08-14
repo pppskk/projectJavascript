@@ -143,6 +143,69 @@ h2 {
     }
 }
 
+.home-img .img-box {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.home-img .img-box::before,
+.home-img .img-box::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: conic-gradient(transparent, transparent,
+    transparent, #FFF6A2);
+    transform: rotate(0deg);
+    animation: rotate-border 10s linear infinite;
+}
+
+.home-img .img-box::after {
+    animation-delay: -5s;
+}
+
+@keyframes rotate-border {
+    98%,
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.home-img .img-box .img-item {
+    position: relative;
+    width: 101%;
+    height: 101%;
+    background-color: #2d3748;
+    border-radius: 50%;
+    border: 1px solid #2d3748;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.home-img .img-box .img-item img {
+    position: absolute;
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    text-align: center;
+}
+
 .group {
     display: flex;
     flex-direction: row;
@@ -166,19 +229,8 @@ h2 {
     border-right: 2px solid #e0e0e0;
 }
 
-.profile-img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    margin-bottom: 1.5rem;
-    border: 5px solid #fff;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 .profile-img:hover {
     transform: scale(1.1) rotate(5deg);
-    /* เพิ่มการหมุนเล็กน้อย */
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
@@ -191,7 +243,10 @@ h1 {
 .job-title {
     display: inline-block;
     font-size: 1.5rem;
-    margin: -10px;
+    line-height: 2rem;   /* กำหนดความสูงบรรทัด */
+    min-height: 2rem;    /* กันหดตัว */
+    margin: 0;           /* ลองรีเซ็ต margin ที่ทำให้ขยับ */
+    position: relative;
 }
 
 .job-title span {
