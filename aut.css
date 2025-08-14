@@ -1,0 +1,912 @@
+:root {
+    /* Light theme colors */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --nav-bg: rgba(255, 255, 255, 0.95);
+    --nav-text: #333333;
+    --card-bg: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --accent-color: #60c7ff;
+    --accent-secondary: #fe5882;
+}
+
+[data-theme="dark"] {
+    /* Dark theme colors */
+    --bg-primary: #0f0f23;
+    --bg-secondary: #1a1a2e;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --nav-bg: rgba(15, 15, 35, 0.95);
+    --nav-text: #ffffff;
+    --card-bg: #1a1a2e;
+    --border-color: #2a2a3e;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --accent-color: #4facfe;
+    --accent-secondary: #00f2fe;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    overflow-x: visible;
+    user-select: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tabbed {
+    text-indent: 40px;
+}
+
+/* Header & Navigation */
+.navbar {
+    background: var(--nav-bg);
+    backdrop-filter: blur(20px);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: none;
+    /* box-shadow: 0 2px 20px var(--shadow); */
+}
+
+.navbar.scrolled {
+    box-shadow: 0 2px 20px var(--shadow);
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.navbar.black {
+    background: #10101f;
+    backdrop-filter: blur(20px);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.navbar.black .nav-container .nav-menu a {
+    color: #FFF6A2;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar.black .nav-container .nav-menu a.highlight {
+    color: #10101f;
+}
+
+.navbar.black .theme i {
+    color: #ffffff !important;
+}
+
+.navbar.black .theme i.fa-sun {
+    color: #ffd700 !important;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-container a {
+    text-decoration: none;
+}
+
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #60c7ff, #fe5882);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: backgound 3s ease-in-out;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--nav-text);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(45deg, #FFB3C6, #FFF6A2);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+.nav-menu li a.vib i:hover{
+    cursor: pointer;
+}
+
+.nav-menu li a.vib::after {
+    background: none;
+    cursor: pointer;
+}
+
+.nav-menu li a.vib:hover::after {
+    width: 0%;
+    cursor: pointer;
+}
+
+.language {
+    cursor: pointer;
+}
+
+.theme {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.theme:hover {
+    transform: scale(1.1);
+}
+
+.theme i {
+    font-size: 1.2rem;
+    color: var(--nav-text);
+    transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .theme i {
+    color: #ffd700;
+}
+
+nav a.highlight {
+    /* Base styles for the button */
+    margin-top: 1.5rem;
+    padding: 0.8em 1.5em;
+    background-color: var(--accent-color);
+    border: none;
+    color: var(--bg-primary);
+    border-radius: 1000px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    overflow: hidden;
+    /* This is important to contain the pseudo-element */
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 0;
+}
+
+nav a.highlight:after {
+    /* The pseudo-element for the gradient effect */
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 1000px;
+    background-image: linear-gradient(to right, #FFB3C6, #FFF6A2);
+    /* transition: width 0.5s ease, height 0.5s ease; */
+    z-index: -1;
+}
+
+nav a.highlight:hover:after {
+    /* State when hovering over the button */
+    width: 50%;
+    height: 50%;
+    /* Adjusting height for a smoother effect */
+}
+
+nav a.highlight:hover {
+    /* Hover effects for the button itself */
+    box-shadow: 0 0 40px rgba(255, 179, 198, 0.7), 0 0 40px rgba(179, 229, 255, 0.7);
+    transform: translateY(-3px);
+    /* Lifts the button slightly */
+    z-index: 1;
+}
+
+.curtain {
+    position: fixed;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: url('img/curtain.jpg');
+    z-index: 10;
+    transition: transform 4s ease, box-shadow 2s ease;
+}
+
+.left {
+    left: 0;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.8);
+    transform: translateX(0);
+}
+
+.right {
+    right: 0;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.8);
+    transform: translateX(0);
+}
+
+.open .left {
+    box-shadow: none;
+    transform: translateX(-100%);
+}
+
+.open .right {
+    box-shadow: none;
+    transform: translateX(100%);
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding-top: 20%;
+    opacity: 0;
+    transition: opacity 4s ease 4s;
+}
+
+.open .content {
+    opacity: 1;
+}
+
+.hero {
+    background: var(--bg-primary) no-repeat center center/cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    text-align: center;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    /* เพิ่มระยะห่างด้านล่างของโมเดล */
+}
+
+.hero-content model-viewer {
+    width: 30vw;
+    height: 30vh;
+    border: none;
+}
+
+.hero-contect{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.hero-contect ul li{
+    display: inline-block;
+    margin-top: .65rem;
+    margin-left: .65rem;
+    margin-right: .65rem;
+    height: 3rem;
+    width: 3rem;
+}
+
+.hero-contect a {
+    color: #10101f;
+    height: 3rem;
+    width: 3rem;
+}
+
+.hero-contect i {
+    height: 3rem;
+    width: 3rem;
+    color: #10101f;
+}
+
+.container {
+    display: flex;
+    /* กำหนดให้เป็น Flexbox */
+    flex-direction: column;
+    /* จัดเรียงองค์ประกอบในแนวตั้ง */
+    justify-content: center;
+    /* จัดให้อยู่ตรงกลางตามแนวแกนหลัก (แนวตั้ง) */
+    align-items: center;
+    /* จัดให้อยู่ตรงกลางตามแนวแกนรอง (แนวนอน) */
+    height: 100vh;
+    /* กำหนดความสูงให้เต็มหน้าจอ */
+}
+
+.hero-text {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.typing-effect {
+    display: inline-block;
+    /* font-size: 2.5rem; */
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation:
+        typing-deleting 18s infinite;
+}
+
+.typing-effect::after {
+    content: "";
+    padding-right: 0.1em;
+    opacity: 0.6;
+    border-right: 0.08em solid var(--text-primary);
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing-deleting {
+    0% {
+        width: -1ch;
+    }
+
+    6% {
+        width: 16ch;
+    }
+
+    90% {
+        width: 16ch;
+    }
+
+    93% {
+        width: -1ch;
+    }
+
+    100% {
+        width: -1ch;
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: var(--text-primary);
+    }
+}
+
+.hero-text p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    /* จำกัดความกว้างของข้อความ */
+    margin: 20px auto;
+    /* จัดให้อยู่ตรงกลาง */
+}
+
+.about {
+    background: var(--bg-primary) no-repeat center center/cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: stretch;
+    /* ให้ items ขยายเต็มความสูงของ container */
+    justify-content: flex-start;
+    /* จัดเรียง items จากทางซ้าย */
+}
+
+.about-contect {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    /* ใช้ Flexbox เพื่อจัดเรียงเนื้อหา */
+    align-items: center;
+    /* จัดให้อยู่ตรงกลางตามแนวแกนหลัก (แนวตั้ง) */
+}
+
+#about-model {
+    width: 100%;
+    /* ให้โมเดลขยายเต็มพื้นที่ */
+    height: 100vh;
+    /* กำหนดความสูงให้เต็มหน้าจอ */
+    object-fit: contain;
+    /* ให้โมเดลไม่ถูกตัด */
+    position: absolute;
+    /* ทำให้โมเดลอยู่ด้านหลังเนื้อหา */
+    left: -50%;
+    /* เลื่อนโมเดลไปทางซ้าย */
+}
+
+.about-info {
+    margin-left: auto;
+    width: 75%;
+    padding: 40px;
+    padding-top: 90px;
+    box-sizing: border-box;
+    display: flex;
+    /* ทำให้เนื้อหาเป็น Flex container */
+    flex-direction: row;
+    /* จัดเรียงเป็นแนวนอน */
+    justify-content: space-around;
+    /* จัดเรียงเนื้อหาให้มีช่องไฟเท่าๆ กัน */
+    margin-top: 5rem;
+    gap: 1rem;
+}
+
+.about-info img {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.86);
+}
+
+.about-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-info li:first-of-type {
+    margin-bottom: 20px;
+}
+
+.Page {
+    font-size: 2rem;
+}
+
+.experience {
+    position: relative;
+    /* ให้ z-index ใช้งานได้ */
+    z-index: 10;
+    /* ลอยอยู่เหนือ section อื่น */
+    box-shadow: 0 10px 80px rgba(0, 0, 0, 0.8);
+    background: #10101f no-repeat center center/cover;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF6A2;
+    /* เปลี่ยนสีข้อความให้เข้ากับธีม */
+}
+
+.experience-content {
+    max-width: 50vw;
+    font-size: 0.8rem;
+}
+
+.experience-content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.experience-content .work-topic {
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.experience-content .work-in {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.experience-model {
+    width: 30vw;
+    height: 50vh;
+    align-items: center;
+    justify-content: center;
+}
+
+#experience-model {
+    width: 100%;
+}
+
+.skills {
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.3);
+    background-color: #10101f;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF6A2;
+    flex-direction: column;
+    /* overflow: hidden; */
+}
+
+/* .skills::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 400px;
+    background: url('img/Moon.png') no-repeat center / contain;
+    clip-path: inset(0 0 50% 0);
+    z-index: -99;
+} */
+
+.skills h1 {
+    font-size: 2.4rem;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.skills p {
+    font-size: 0.8rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #2d3748;
+    color: #FFF6A2;
+    transition: transform 0.3s ease;
+}
+
+@property --deg {
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+}
+
+.skill-item::before,
+.skill-item::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: conic-gradient(from var(--deg) at center, #FFB3C6, #B3E5FF, #FFF6A2);
+    border-radius: inherit;
+    z-index: -2;
+    padding: 2px;
+    animation: autoRotate 2s linear infinite;
+}
+
+.skill-item::after {
+    filter: blur(10px);
+}
+
+@keyframes autoRotate {
+    to {
+        --deg: 360deg;
+    }
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+}
+
+.skill-item img {
+    margin-bottom: 5px;
+}
+
+.moon-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60vw;
+    height: 30vh;
+    overflow: hidden;
+    z-index: -99;
+}
+
+.moon-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+    z-index: -99;
+    rotate: var(--deg);
+    animation: autoRotate 260s linear infinite;
+}
+
+.gallery {
+    background: var(--bg-primary) no-repeat center center/cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+.gallery h1 {
+    font-size: 2rem;
+    margin-top: auto;
+    margin-bottom: 8px;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.card {
+    position: relative;
+    min-width: 480px;
+    height: 320px;
+    overflow: visible;
+    opacity: 0.5;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+    margin: 3rem;
+}
+
+.card.active {
+    transform: scale(130%);
+    filter: grayscale(0%);
+    opacity: 1;
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card span {
+    position: absolute;
+    bottom: 1rem;
+    left: 2rem;
+    background-color: #333;
+    color: #FFF6A2;
+    padding: 1rem;
+}
+
+.container-warp {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 0 2rem;
+}
+
+.container-warp::-webkit-scrollbar {
+    display: none;
+}
+
+.wrapper {
+    margin: 4rem;
+    position: relative;
+    width: 80vw;
+    /* ยึดตามหน้าจอ ลบ margin ซ้าย-ขวา */
+    max-width: 100%;
+    /* ป้องกันเกินขอบ viewport */
+    overflow: visible;
+    /* ซ่อนส่วนเกินที่อยู่นอกขอบ */
+}
+
+.wrapper button {
+    opacity: 0.8;
+    height: 48px;
+    width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    border: none;
+    outline: none;
+    border-radius: 200px;
+    padding: .5rem 1rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9;
+    cursor: pointer;
+}
+
+button i {
+    width: 18px;
+}
+
+#prev {
+    background-color: #B3E5FF;
+    left: 1.5rem;
+    z-index: 10;
+}
+
+#next {
+    background-color: #FFB3C6;
+    right: 1.5rem;
+    z-index: 10;
+}
+
+/* Footer */
+.footer {
+    background: #2d3748;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    color: #60c7ff;
+}
+
+.footer-section p,
+.footer-section li {
+    color: #a0aec0;
+    line-height: 1.8;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section a {
+    color: #a0aec0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #60c7ff;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #4a5568;
+    color: #a0aec0;
+}
+
+
+/* Theme Transitions */
+section {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme specific adjustments */
+[data-theme="dark"] .hero-text p {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .about-info h1,
+[data-theme="dark"] .about-info h2 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .about-info p {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .gallery h1 {
+    color: var(--text-primary);
+}
+
+/* Additional theme improvements */
+[data-theme="dark"] .hero-contect a {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .hero-contect i {
+    color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .about {
+        flex-direction: column;
+        /* เปลี่ยนเป็นแนวตั้ง */
+        align-items: center;
+        /* จัดให้อยู่ตรงกลาง */
+    }
+
+    .about-contect {
+        display: none;
+    }
+
+    #about-model {
+        display: none;
+    }
+
+    .about {
+        height: auto;
+        /* ปรับความสูงให้เหมาะสม */
+    }
+
+    .about-info {
+        width: 90%;
+        /* กำหนดความกว้างให้เหมาะสม */
+        padding: 20px;
+        /* ลด padding */
+        flex-direction: column;
+        /* จัดเรียงเป็นแนวตั้ง */
+        align-items: center;
+    }
+
+    .experience {
+        height: auto;
+        padding: 20px;
+        flex-direction: column;
+        /* เพิ่ม padding เพื่อให้เนื้อหามีพื้นที่ */
+    }
+
+    .experience-content {
+        font-size: 0.7rem;
+        padding: 20px;
+    }
+
+    .skills h1 {
+        font-size: 2rem;
+        /* ปรับขนาดตัวอักษรให้เล็กลง */
+    }
+
+    .skills p {
+        font-size: 0.7rem;
+        /* ปรับขนาดตัวอักษรให้เล็กลง */
+    }
+
+    .moon-wrapper {
+        width: 250px;
+        height: 125px;
+    }
+}
