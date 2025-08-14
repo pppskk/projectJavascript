@@ -3,15 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumina AI - Portfolio</title>
+    <title>Yodsaphak Panyapeng - Portfolio</title>
     <link rel="stylesheet" href="portfolioGolf.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">Lumina AI</div>
+            <div class="logo" onclick="scrollToTop()">Lumina AI</div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
+                <!--เหลือแค่เอาไปใส่ Main -->
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -21,17 +30,28 @@
         </div>
     </nav>
 
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="scrollToTop()" title="Back to top">
+        ↑
+    </button>
+
     <!-- Hero Section -->
     <section id="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Hi,I'm Yodsaphak panyapeng</h1>
-                <p class="hero-subtitle">Web developer</p>
-                <p class="hero-description">I craft beautiful, functional digital experiences that bridge the gap between creativity and technology. Passionate about clean code, innovative design, and cutting-edge AI solutions.</p>
-                <a href="#projects" class="cta-button">
-                    <span>View My Work</span>
-                    <span>→</span>
-                </a>
+                <h1 class="hero-title">I'm Yodsaphak Panyapeng</h1>
+                <p class="hero-subtitle">Web Developer & Creative Technologist</p>
+                <p class="hero-description">I craft beautiful, functional digital experiences that bridge the gap between creativity and technology. Passionate about clean code, innovative design, and cutting-edge web solutions.</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="cta-button primary">
+                        <span>View My Work</span>
+                        <span>→</span>
+                    </a>
+                    <a href="#contact" class="cta-button">
+                        <span>Get In Touch</span>
+                        <span>✉</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -42,21 +62,25 @@
             <h2 class="section-title">About Me</h2>
             <p class="section-subtitle">Building tomorrow's web experiences today</p>
             <div class="about-content">
-                <p class="about-text">
-                    I'm a passionate front-end developer with a deep love for creating exceptional digital experiences. With expertise in modern web technologies and a keen eye for design, I transform ideas into reality through clean, efficient code and intuitive user interfaces.
-                </p>
+                <div class="about-text">
+                    I'm a passionate web developer with a deep love for creating exceptional digital experiences. With expertise in modern web technologies and a keen eye for design, I transform ideas into reality through clean, efficient code and intuitive user interfaces. My journey in web development has been driven by curiosity and a commitment to continuous learning, always staying current with the latest trends and best practices in the industry.
+                </div>
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-number">1+</div>
                         <div class="stat-label">Years Experience</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">10+</div>
+                        <div class="stat-number">15+</div>
                         <div class="stat-label">Projects Completed</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">100%</div>
                         <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support Available</div>
                     </div>
                 </div>
             </div>
@@ -67,7 +91,7 @@
     <section id="skills">
         <div class="container">
             <h2 class="section-title">Skills & Expertise</h2>
-            <p class="section-subtitle">Technologies I work with daily</p>
+            <p class="section-subtitle">Technologies and tools I work with daily</p>
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Frontend Development</h3>
@@ -75,20 +99,15 @@
                         <span class="skill-tag">HTML5</span>
                         <span class="skill-tag">CSS3</span>
                         <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Vue.js</span>
-                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Tailwind CSS</span>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h3>Tools & Technologies</h3>
                     <div class="skills-list">
                         <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">AWS</span>
                         <span class="skill-tag">Figma</span>
-                        <span class="skill-tag">Webpack</span>
-                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">VS Code</span>
                     </div>
                 </div>
             </div>
@@ -99,13 +118,13 @@
     <section id="projects">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">A showcase of my recent work</p>
+            <p class="section-subtitle">A showcase of my recent work and achievements</p>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-header"></div>
                     <div class="project-content">
                         <h3 class="project-title">AI-Powered Dashboard</h3>
-                        <p class="project-description">A comprehensive analytics dashboard built with React and Node.js, featuring real-time data visualization and machine learning insights for business intelligence.</p>
+                        <p class="project-description">A comprehensive analytics dashboard built with React and Node.js, featuring real-time data visualization and machine learning insights for business intelligence. Includes advanced filtering, export capabilities, and responsive design.</p>
                         <a href="#" class="project-link">
                             <span>View Project</span>
                             <span>→</span>
@@ -116,7 +135,7 @@
                     <div class="project-header"></div>
                     <div class="project-content">
                         <h3 class="project-title">E-Commerce Platform</h3>
-                        <p class="project-description">Full-stack e-commerce solution with modern UI/UX, payment integration, inventory management, and admin panel. Built with React, Node.js, and MongoDB.</p>
+                        <p class="project-description">Full-stack e-commerce solution with modern UI/UX, payment integration, inventory management, and admin panel. Built with React, Node.js, and MongoDB featuring secure authentication and optimized performance.</p>
                         <a href="#" class="project-link">
                             <span>View Project</span>
                             <span>→</span>
@@ -127,7 +146,7 @@
                     <div class="project-header"></div>
                     <div class="project-content">
                         <h3 class="project-title">Social Media App</h3>
-                        <p class="project-description">Mobile-first social platform with real-time messaging, content sharing, and advanced privacy controls. Features include push notifications and offline support.</p>
+                        <p class="project-description">Mobile-first social platform with real-time messaging, content sharing, and advanced privacy controls. Features include push notifications, offline support, and progressive web app capabilities.</p>
                         <a href="#" class="project-link">
                             <span>View Project</span>
                             <span>→</span>
@@ -142,7 +161,7 @@
     <section id="contact">
         <div class="container">
             <h2 class="section-title">Let's Work Together</h2>
-            <p class="section-subtitle">Ready to bring your ideas to life? Let's connect!</p>
+            <p class="section-subtitle">Ready to bring your ideas to life? Let's connect and discuss your next project!</p>
             <div class="contact-content">
                 <div class="contact-grid">
                     <div class="contact-item">
@@ -155,7 +174,9 @@
                     <div class="contact-item">
                         <div class="contact-icon">📱</div>
                         <div class="contact-label">Phone</div>
-                        <div class="contact-value">0992354486</div>
+                        <div class="contact-value">
+                            <a href="tel:0992354486">0992354486</a>
+                        </div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">🔗</div>
@@ -163,6 +184,7 @@
                         <div class="contact-value">
                             <a href="https://github.com/Minyeonn05" target="_blank">github.com/Minyeonn05</a>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -173,7 +195,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Lumina AI. Crafted with passion and precision.</p>
+                <p>&copy; 2025 Yodsaphak Panyapeng. Crafted with passion and precision.</p>
             </div>
         </div>
     </footer>
