@@ -912,7 +912,8 @@ section {
 
     .experience-content {
         font-size: 0.7rem;
-        padding: 20px;
+        max-width: 100vw;
+        /* padding: 20px; */
     }
 
     .skills h1 {
