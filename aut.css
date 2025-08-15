@@ -148,7 +148,8 @@ body {
 .nav-menu a:hover::after {
     width: 100%;
 }
-.nav-menu li a.vib i:hover{
+
+.nav-menu li a.vib i:hover {
     cursor: pointer;
 }
 
@@ -232,6 +233,24 @@ nav a.highlight:hover {
     z-index: 1;
 }
 
+/* Default hidden */
+/* .nav-menu {
+    display: none;
+} */
+
+/* Hamburger icon */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--nav-text);
+    z-index: 1001;
+}
+
+.menu-toggle i.black {
+    color: #FFF6A2;
+}
+
 .curtain {
     position: fixed;
     top: 0;
@@ -302,12 +321,13 @@ nav a.highlight:hover {
     border: none;
 }
 
-.hero-contect{
+.hero-contect {
     align-items: center;
     text-align: center;
     justify-content: center;
 }
-.hero-contect ul li{
+
+.hero-contect ul li {
     display: inline-block;
     margin-top: .65rem;
     margin-left: .65rem;
@@ -908,5 +928,38 @@ section {
     .moon-wrapper {
         width: 250px;
         height: 125px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: var(--nav-bg);
+        padding: 60px 20px;
+        overflow-y: auto;
+        z-index: 1000;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .nav-menu a {
+        font-size: 1.5rem;
+        color: var(--nav-text);
     }
 }
